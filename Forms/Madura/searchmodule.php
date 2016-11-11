@@ -35,6 +35,7 @@ while ($row = mysqli_fetch_array($r_query)) {
 
 }
 
+
 $conn->close();
 ?>
 <!DOCTYPE html>
@@ -49,7 +50,7 @@ $conn->close();
 	<title>WTF</title>
 </head>
 <body>
-<form data-toggle = "validator" role = "form" class="form-horizontal" action = "action.php" method="POST">
+<form data-toggle = "validator" role = "form" class="form-horizontal" action = "modify.php" method="POST">
 <h2>Customer Registration</h2>
   <div class="form-group has-feedback">
     <label class="control-label col-sm-2" >Name:</label>
@@ -106,8 +107,7 @@ $conn->close();
   </div>
     <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Modify</button>
-      <button type="submit reset" class="btn btn-default">Delete</button>
+      <button type="update" class="btn btn-default">Modify</button>
     </div>
   </div>
 </form>
