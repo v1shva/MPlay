@@ -3,10 +3,14 @@
 <title> NextMEd </title>
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css?<?=filesize('styles.css');?>">
 </head>
 
 <body>
+    <h1>
+        Add a Song
+    </h1>
+    <hr>
   <form action="action_page.php" method="post" enctype="multipart/form-data">
       <div class="content">
           <div class="row">
@@ -81,7 +85,12 @@
           </div>
 
       </div>
-    <input type="submit" value="Submit">
+      <div class="row">
+          <div class="cell" style="width: 100%">
+              <input type="submit" value="Submit">
+          </div>
+      </div>
+
   </form>
 </body>
 <script>

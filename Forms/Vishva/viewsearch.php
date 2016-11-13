@@ -1,100 +1,78 @@
 <!DOCTYPE html>
 <html>
-<title> NextMEd </title>
+
 <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="viewsearchstyle.css?<?=filesize('viewsearchstyle.css');?>">
 </head>
 
 <body>
-  <form action="action_page.php" method="post" enctype="multipart/form-data">
-      <div class="content">
-          <div class="row">
-              <div class="cell">
-                  Title :
-              </div>
-              <div class="cell">
-                  <input type="text" name="title" placeholder=" ">
-              </div>
-          </div>
-          <div class="row">
-              <div class="cell">
-                  Artist :
-              </div>
-              <div class="cell">
-                  <input type="text" name="artist" placeholder=" ">
-              </div>
-          </div>
-
-          <div class="row">
-            <div class="cell">
-              Decade :
-            </div>
-            <div class="cell">
-              <input type="text" name="decade" placeholder=" ">
-            </div>
-          </div>
-          <div class="row">
-            <div class="cell">
-              Emotion :
-            </div>
-            <div class="cell">
-              <select name="emotion">
-                <option value="Angry">Angry</option>
-                <option value="Sad">Sad</option>
-                <option value="Happy">Happy</option>
-                <option value="Remorse">Remorse</option>
-              </select>
-            </div>
-          </div>
-          <div class="row">
-            <div class="cell">
-              Tags :
-            </div>
-            <div class="cell">
-              <input  type="text" name="tags" placeholder=" ">
-            </div>
-          </div>
-          <div class="row">
-              <div class="cell">
-                  Language :
-              </div>
-              <div class="cell">
-                  <select name="language">
-                      <option value="Sinhala">Sinhala</option>
-                      <option value="English">English</option>
-                      <option value="Tamil">Tamil</option>
-                      <option value="Hindi">Hindi</option>
-                  </select>
-              </div>
-          </div>
-          <div class="row">
-            <div class="cell">
-              Upload Method :
-            </div>
-            <div class="cell">
-              <input type="radio" name="uploadMethod" value="file" onclick="uploadFile()"> Upload File
-              <input type="radio"  name="uploadMethod" value="url" onclick="selectUrl()"> Url
-              <input id="FileField" type="file" name="fileupld" style="display: none">
-              <input id="UrlField" type="text" name="urltext" placeholder="url" style="display: none">
-            </div>
-          </div>
-
-      </div>
-    <input type="submit" value="Submit">
-  </form>
+    <h1> View or Search Songs</h1>
+    <hr>
+    <button onclick="view('out')">View Songs</button><br>
+    <input id="userIn" type="text" placeholder="Artist or Song Title">
+    <button onclick="search('userIn','out')">Search Songs</button>
+    <div id="out" class="display">
+        <div class="table"
+    </div>
 </body>
 <script>
-  function uploadFile() {
-    var upField = document.getElementById("FileField");
-    var urlField = document.getElementById("UrlField");
-    upField.style.display = "block";
-    urlField.style.display = "none";
+  function search(elementID, outElementID)
+  {
+      var searchThis = document.getElementById(elementID).value;
+      var outElement = document.getElementById(outElementID);
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              outElement.innerHTML = xmlhttp.responseText;
+          }
+      };
+
+      xmlhttp.open("GET", "search_action.php?searchthis=" + searchThis, true);
+      xmlhttp.send();
   }
-  function selectUrl() {
-    var upField = document.getElementById("FileField");
-    var urlField = document.getElementById("UrlField");
-    upField.style.display = "none";
-    urlField.style.display = "block";
+  function deleteitem(deletethis)
+  {
+      var outElement = document.getElementById('out');
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              outElement.innerHTML = xmlhttp.responseText;
+          }
+      };
+
+      xmlhttp.open("GET", "delete_action.php?deletethis=" + deletethis, true);
+      xmlhttp.send();
   }
+  function view(outElementID)
+  {
+      var outElement = document.getElementById(outElementID);
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              outElement.innerHTML = xmlhttp.responseText;
+          }
+      };
+
+      xmlhttp.open("GET", "view_action.php", true);
+      xmlhttp.send();
+  }
+  function modifyitem(modifythis)
+  {
+      var xmlhttp = new XMLHttpRequest();
+      var outElement = document.getElementById('out');
+      xmlhttp.onreadystatechange = function() {
+
+          if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              outElement.innerHTML = xmlhttp.responseText;
+          }
+      };
+
+      xmlhttp.open("GET", "modify.php?modifythis=" + modifythis, true);
+      xmlhttp.send();
+  }
+
 </script>
