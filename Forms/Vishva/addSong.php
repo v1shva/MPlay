@@ -7,14 +7,14 @@
 </head>
 
 <body>
-  <form action="action_page.php" class="inputs">
+  <form action="action_page.php" method="post" enctype="multipart/form-data">
       <div class="content">
           <div class="row">
               <div class="cell">
                   Title :
               </div>
               <div class="cell">
-                  <input type="text" name="name" placeholder=" ">
+                  <input type="text" name="title" placeholder=" ">
               </div>
           </div>
           <div class="row">
@@ -22,23 +22,16 @@
                   Artist :
               </div>
               <div class="cell">
-                  <input type="text" name="name" placeholder=" ">
+                  <input type="text" name="artist" placeholder=" ">
               </div>
           </div>
-          <div class="row">
-            <div class="cell">
-              Artist :
-            </div>
-            <div class="cell">
-              <input type="text" name="name" placeholder=" ">
-            </div>
-          </div>
+
           <div class="row">
             <div class="cell">
               Decade :
             </div>
             <div class="cell">
-              <input type="text" name="name" placeholder=" ">
+              <input type="text" name="decade" placeholder=" ">
             </div>
           </div>
           <div class="row">
@@ -59,7 +52,7 @@
               Tags :
             </div>
             <div class="cell">
-              <input  type="text" name="name" placeholder=" ">
+              <input  type="text" name="tags" placeholder=" ">
             </div>
           </div>
           <div class="row">
@@ -67,10 +60,10 @@
               Song :
             </div>
             <div class="cell">
-              <input type="radio" name="uploadtype" value="file" onclick="uploadFile()"> Upload File
-              <input type="radio" name="uploadtype" value="url" onclick="selectUrl()"> Url
-              <input id="FileField" type="file" name="file" style="display: none">
-              <input id="UrlField" type="text" name="name" placeholder="url" style="display: none">
+              <input type="radio" value="file" onclick="uploadFile()"> Upload File
+              <input type="radio"  value="url" onclick="selectUrl()"> Url
+              <input id="FileField" type="file" name="fileupld" style="display: none">
+              <input id="UrlField" type="text" name="urltext" placeholder="url" style="display: none">
             </div>
           </div>
 

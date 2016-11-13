@@ -2,18 +2,18 @@
 
 //Defining variables for the database
 
-$dbhost="us-cdbr-azure-southcentral-f.cloudapp.net";
-$dbuser="bd3bc2a79fa1ad";
-$dbpassword="60eb0f4f";
-$dbname="acsm_2a0677acd5113ea";
+$servername = "us-cdbr-azure-southcentral-f.cloudapp.net";
+$username = "b36179e61784e9";
+$password = "d37edf33";
+$dbname = "mplaydb";
 
 //function to connect to the database
-$db = mysqli_connect($dbhost,$dbuser,$dbpassword,$dbname);
+$db = mysqli_connect($servername,$username,$password,$dbname);
 
 
 
 if ($db) {
-
+    echo "Db connected";
 }
 else {
 
