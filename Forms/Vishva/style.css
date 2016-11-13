@@ -1,3 +1,6 @@
+*{
+    font-family: Arial;
+}
 .content{
     display:table;
     width:100%;
@@ -11,7 +14,9 @@
 
 .cell{
     display: table-cell;
-    width: 50%;
+    width: 25%;
+    border:10px solid #ccc;
+    background-color: #d8d5d6;
 
 }
 
@@ -27,7 +32,7 @@ select{
 
 input[type="text"], select, textarea{
     width:90%;
-    border:10px solid #ccc;
+
     outline:none;
     -webkit-transition : border 500ms ease-out;
     -moz-transition : border 500ms ease-out;

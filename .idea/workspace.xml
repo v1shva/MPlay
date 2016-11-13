@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Forms/Vishva/viewsearch.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forms/Vishva/action_page.php" afterPath="$PROJECT_DIR$/Forms/Vishva/action_page.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forms/Vishva/addSong.php" afterPath="$PROJECT_DIR$/Forms/Vishva/addSong.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forms/Vishva/db.php" afterPath="$PROJECT_DIR$/Forms/Vishva/db.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Forms/Vishva/style.css" afterPath="$PROJECT_DIR$/Forms/Vishva/style.css" />
     </list>
     <ignored path="Mplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,14 +29,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="addSong.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="addSong.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forms/Vishva/addSong.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+            <state relative-caret-position="221">
+              <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
               <folding>
-                <element signature="n#style#0;n#input#2;n#div#1;n#div#5;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#input#2;n#div#1;n#div#6;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="viewsearch.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Forms/Vishva/viewsearch.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -44,8 +54,8 @@
       <file leaf-file-name="db.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forms/Vishva/db.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+            <state relative-caret-position="221">
+              <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -54,8 +64,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forms/Vishva/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+            <state relative-caret-position="461">
+              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -64,10 +74,12 @@
       <file leaf-file-name="action_page.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Forms/Vishva/action_page.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+            <state relative-caret-position="313">
+              <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
               <folding>
-                <marker date="1479015644080" expanded="true" signature="684:825" ph="INSERT INTO song... " />
+                <marker date="1479018830211" expanded="true" signature="658:895" ph="INSERT INTO song... " />
+                <marker date="1479018830211" expanded="true" signature="1229:1269" ph="INSERT INTO song... " />
+                <marker date="1479018830211" expanded="true" signature="1229:1466" ph="INSERT INTO song... " />
               </folding>
             </state>
           </provider>
@@ -88,10 +100,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Forms/Vishva/style.css" />
         <option value="$PROJECT_DIR$/Forms/Vishva/db.php" />
-        <option value="$PROJECT_DIR$/Forms/Vishva/action_page.php" />
         <option value="$PROJECT_DIR$/Forms/Vishva/addSong.php" />
+        <option value="$PROJECT_DIR$/Forms/Vishva/action_page.php" />
+        <option value="$PROJECT_DIR$/Forms/Vishva/style.css" />
       </list>
     </option>
   </component>
@@ -215,6 +227,12 @@
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../testing" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Mplay\Forms\Vishva" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
@@ -278,12 +296,12 @@
       <option name="presentableId" value="Default" />
       <updated>1478847256569</updated>
       <workItem from="1478847258363" duration="13050000" />
-      <workItem from="1479013296973" duration="2433000" />
+      <workItem from="1479013296973" duration="5960000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15483000" />
+    <option name="totallyTimeSpent" value="19010000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -329,7 +347,7 @@
         <state relative-caret-position="1139">
           <caret line="67" column="18" selection-start-line="67" selection-start-column="18" selection-end-line="67" selection-end-column="18" />
           <folding>
-            <element signature="n#style#0;n#input#2;n#div#1;n#div#5;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#1;n#div#6;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -339,7 +357,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1479015644080" expanded="true" signature="684:825" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="658:895" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="1229:1269" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="1229:1466" ph="INSERT INTO song... " />
           </folding>
         </state>
       </provider>
@@ -362,39 +382,49 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Forms/Vishva/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Forms/Vishva/db.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="62" selection-start-line="10" selection-start-column="62" selection-end-line="10" selection-end-column="62" />
+        <state relative-caret-position="221">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forms/Vishva/action_page.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+        <state relative-caret-position="313">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding>
-            <marker date="1479015644080" expanded="true" signature="684:825" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="658:895" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="1229:1269" ph="INSERT INTO song... " />
+            <marker date="1479018830211" expanded="true" signature="1229:1466" ph="INSERT INTO song... " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forms/Vishva/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Forms/Vishva/addSong.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="54" column="44" selection-start-line="54" selection-start-column="44" selection-end-line="54" selection-end-column="44" />
+        <state relative-caret-position="221">
+          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
           <folding>
-            <element signature="n#style#0;n#input#2;n#div#1;n#div#5;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#input#2;n#div#1;n#div#6;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Forms/Vishva/viewsearch.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
