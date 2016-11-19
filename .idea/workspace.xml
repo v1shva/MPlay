@@ -2,9 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/angry.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/cool.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/crying.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/drooling.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/embarsed.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/happy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/hypo.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/in love.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/laugh.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/lol.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/naughty.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/nerdy.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/omg.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/sad.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/sadsad.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/tired.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/undecided.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
     </list>
     <ignored path="Mplay.iws" />
@@ -29,11 +45,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Pages.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php">
+      <file leaf-file-name="pages.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+            <state relative-caret-position="374">
+              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -49,21 +65,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="563">
-              <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+            <state relative-caret-position="323">
+              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="170">
-              <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
+              <caret line="10" column="93" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="93" />
               <folding>
                 <element signature="e#6#91#0#PHP" expanded="true" />
               </folding>
@@ -74,8 +90,8 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="986">
-              <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+            <state relative-caret-position="391">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
               <folding>
                 <element signature="e#6#91#0#PHP" expanded="true" />
               </folding>
@@ -97,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,12 +158,12 @@
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/footer.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/autoload.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/routes.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
       </list>
     </option>
   </component>
@@ -356,28 +372,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeIgniter-3.1.2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
@@ -459,12 +453,12 @@
       <updated>1478847256569</updated>
       <workItem from="1478847258363" duration="13050000" />
       <workItem from="1479013296973" duration="24871000" />
-      <workItem from="1479383179442" duration="23936000" />
+      <workItem from="1479383179442" duration="32516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61857000" />
+    <option name="totallyTimeSpent" value="70437000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -909,15 +903,7 @@
     <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="32" selection-start-line="20" selection-start-column="32" selection-end-line="20" selection-end-column="32" />
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -930,6 +916,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="93" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="93" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -938,31 +944,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="563">
-          <caret line="36" column="10" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
+        <state relative-caret-position="374">
+          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
-          <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="86" selection-start-line="10" selection-start-column="86" selection-end-line="10" selection-end-column="86" />
-          <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
