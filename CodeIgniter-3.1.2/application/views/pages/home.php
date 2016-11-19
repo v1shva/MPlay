@@ -6,10 +6,11 @@
  * Time: 2:40 PM
  */?>
 
-<div class="jumbotron">
-    <div class="container">
-        <h1>Let us find your Music.</h1>
-        <p>Community based music app. Let's share our love for music</p>
-        <a href="#">Learn More</a>
-    </div>
+<div class="row">
+    <div class="col-md-2">Title Test</div>
+    <div class="col-md-2">Title Test</div>
+    <div class="col-md-2">Title Test</div>
+    <div class="col-md-2">Title Test</div>
+    <div class="col-md-2">Title Test</div>
+    <div class="col-md-2">Title Test</div>
 </div>
