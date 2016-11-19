@@ -8,8 +8,8 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h1>Find a place to stay.</h1>
-        <p>Rent from people in over 34,000 cities and 192 countries.</p>
+        <h1>Let us find your Music.</h1>
+        <p>Community based music app. Let's share our love for music</p>
         <a href="#">Learn More</a>
     </div>
 </div>
