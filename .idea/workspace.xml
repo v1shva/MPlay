@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/routes.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
-    </list>
+    <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="" />
     <ignored path="Mplay.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -456,12 +451,12 @@
       <updated>1478847256569</updated>
       <workItem from="1478847258363" duration="13050000" />
       <workItem from="1479013296973" duration="24871000" />
-      <workItem from="1479383179442" duration="14506000" />
+      <workItem from="1479383179442" duration="14648000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52427000" />
+    <option name="totallyTimeSpent" value="52569000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
