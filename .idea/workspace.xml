@@ -2,25 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/angry.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/cool.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/crying.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/drooling.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/embarsed.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/happy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/hypo.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/in love.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/laugh.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/lol.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/naughty.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/nerdy.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/omg.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/sad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/sadsad.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/tired.jpg" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/media/moods/undecided.jpg" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
     </list>
     <ignored path="Mplay.iws" />
@@ -48,8 +35,18 @@
       <file leaf-file-name="pages.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+            <state relative-caret-position="357">
+              <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="emotionbar.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -58,18 +55,18 @@
       <file leaf-file-name="main.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+            <state relative-caret-position="170">
+              <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="home.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+            <state relative-caret-position="136">
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -90,11 +87,21 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="187">
+              <caret line="11" column="89" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
               <folding>
                 <element signature="e#6#91#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="moodscss.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -157,13 +164,15 @@
         <option value="$PROJECT_DIR$/Forms/Vishva/addSong.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/footer.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/autoload.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/config/routes.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" />
       </list>
     </option>
   </component>
@@ -320,55 +329,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeIgniter-3.1.2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Mplay" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="CodeIgniter-3.1.2" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -453,12 +414,12 @@
       <updated>1478847256569</updated>
       <workItem from="1478847258363" duration="13050000" />
       <workItem from="1479013296973" duration="24871000" />
-      <workItem from="1479383179442" duration="32516000" />
+      <workItem from="1479383179442" duration="37858000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="70437000" />
+    <option name="totallyTimeSpent" value="75779000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -916,6 +877,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="89" selection-start-line="11" selection-start-column="89" selection-end-line="11" selection-end-column="89" />
+          <folding>
+            <element signature="e#6#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -926,36 +905,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
-          <folding>
-            <element signature="e#6#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="24" column="1" selection-start-line="24" selection-start-column="1" selection-end-line="24" selection-end-column="1" />
+        <state relative-caret-position="357">
+          <caret line="21" column="43" selection-start-line="21" selection-start-column="43" selection-end-line="21" selection-end-column="43" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="12" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="12" />
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
           <folding />
         </state>
       </provider>
