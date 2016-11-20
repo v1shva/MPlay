@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4fe5de9-8e02-4fcd-b4f8-0a00f6041efe" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/PlayerCtrl.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/player.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" afterPath="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" />
     </list>
     <ignored path="Mplay.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -41,8 +41,8 @@
       <file leaf-file-name="emotionbar.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+            <state relative-caret-position="242">
+              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -95,8 +95,8 @@
       <file leaf-file-name="moodscss.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+            <state relative-caret-position="374">
+              <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -154,10 +154,10 @@
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/footer.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/Pages.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/header.php" />
-        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php" />
+        <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css" />
         <option value="$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/pages.php" />
       </list>
     </option>
@@ -449,12 +449,12 @@
       <workItem from="1478847258363" duration="13050000" />
       <workItem from="1479013296973" duration="24871000" />
       <workItem from="1479383179442" duration="37858000" />
-      <workItem from="1479609395905" duration="106000" />
+      <workItem from="1479609395905" duration="3998000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75885000" />
+    <option name="totallyTimeSpent" value="79777000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -700,6 +700,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -738,6 +739,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="38" selection-start-line="42" selection-start-column="38" selection-end-line="42" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -752,6 +754,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -903,6 +906,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -927,6 +931,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="251" selection-start-line="4" selection-start-column="248" selection-end-line="4" selection-end-column="251" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -942,14 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
           <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -970,10 +967,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/PlayerCtrl.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" selection-start-line="4" selection-start-column="18" selection-end-line="4" selection-end-column="18" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/player.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -988,23 +1009,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/home.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="242">
+          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/controllers/PlayerCtrl.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1012,10 +1025,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/pages/emotionbar.php">
+    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/assets/css/moodscss.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="374">
+          <caret line="22" column="28" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
           <folding />
         </state>
       </provider>
@@ -1024,14 +1037,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="52" selection-start-line="21" selection-start-column="52" selection-end-line="21" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CodeIgniter-3.1.2/application/views/templates/player.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
