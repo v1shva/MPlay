@@ -1,0 +1,65 @@
+*{
+    font-family: Arial;
+}
+.content{
+    display:table;
+    width:100%;
+}
+
+.row{
+    display: table-row;
+    width: inherit;
+
+}
+
+.cell{
+    display: table-cell;
+    width: 25%;
+    border:10px solid #ccc;
+    background-color: #d8d5d6;
+
+}
+
+
+input[type=radio]{
+    width:8%;
+
+}
+
+select{
+    width:100%;
+}
+
+input[type="text"], select, textarea{
+    width:100%;
+
+    outline:none;
+    -webkit-transition : border 500ms ease-out;
+    -moz-transition : border 500ms ease-out;
+    -o-transition : border 500ms ease-out;
+    transition : border 500ms ease-out;
+    -ms-box-sizing:content-box;
+    -moz-box-sizing:content-box;
+    box-sizing:content-box;
+    -webkit-box-sizing:content-box;
+
+}
+
+input[type="text"]:focus, select:focus{
+    border:10px solid #7e7e7e;
+}
+
+input[type="submit"]{
+    margin: auto;
+}
+
+form{
+    text-align: center;
+    width:50%;
+}
+
+.display{
+    width: 100%;
+    height: 100%;
+    background: #dddddd;
+}
