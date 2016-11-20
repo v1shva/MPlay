@@ -24,8 +24,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 */
 //$config['base_url'] = 'http://localhost/Mplay/CodeIgniter-3.1.2';
-$config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/CodeIgniter-3.1.2/';
-
+//$config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/CodeIgniter-3.1.2/';
+if($_SERVER['HTTP_HOST']=='localhost'){
+    $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/CodeIgniter-3.1.2/';
+}
+else{
+    $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/CodeIgniter-3.1.2/';
+}
 
 /*
 |--------------------------------------------------------------------------
