@@ -8,9 +8,13 @@
 
 <html>
         <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <title>mPlay</title>
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
+                <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/blue.monday/css/jplayer.blue.monday.min.css"); ?>" />
+
 
         </head>
         <body>
