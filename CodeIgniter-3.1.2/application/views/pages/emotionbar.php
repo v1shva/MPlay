@@ -8,16 +8,16 @@
 
 
 
-<div class="jumbotron">
+<div class="jumbotron emobar">
     <div class="container">
         <h1>Let us find your Music.</h1>
             <div class="container-fluid moods">
-                <img src="<?php echo base_url("media/moods/happy.png"); ?>" width="8%"border="0" class="img-circle emoicon" >
-                <img src="<?php echo base_url("media/moods/in-love.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                <img src="<?php echo base_url("media/moods/confused.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                <img src="<?php echo base_url("media/moods/angry.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                <img src="<?php echo base_url("media/moods/crying.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" >
+                <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon">
+                <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon">
+                <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoicon">
+                <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoicon">
+                <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoicon">
 
 
 
@@ -26,7 +26,7 @@
             <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoicon">
             <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoicon">
             <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-            <img src="<?php echo base_url("media/moods/quiet.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon">
 
         </div>
 
