@@ -19,16 +19,19 @@
         </head>
         <body>
 
-        <nav class="navbar navbar-default">
+        <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
                     <div class="navbar-header">
+                        <a class="navbar-brand" href="#" >
+                            <img alt="Brand" src="<?php echo base_url("media/logo.png"); ?>" class="img-thumbnail" style="width: 60px">
+                        </a>
                             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                                 <span class="sr-only">Toggle navigation</span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">MPlay</a>
+
                         </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
