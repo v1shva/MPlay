@@ -20,6 +20,7 @@ class Pages extends CI_Controller {
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('pages/emotionbar',$data);
+        $this->load->view('pages/suggestions',$data);
         $this->load->view('pages/player',$data);
         $this->load->view('templates/footer', $data);
     }
