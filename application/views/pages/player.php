@@ -6,7 +6,7 @@
  * Time: 10:23 AM
  */?>
 
-
+<div class="footer-player navbar navbar-full navbar-fixed-bottom">
 <div id="jquery_jplayer_1" class="jp-jplayer"></div>
 <div id="jp_container_1" class="jp-audio" role="application" aria-label="media player">
     <div class="jp-type-playlist">
@@ -16,6 +16,11 @@
                 <button class="jp-play" role="button" tabindex="0">play</button>
                 <button class="jp-next" role="button" tabindex="0">next</button>
                 <button class="jp-stop" role="button" tabindex="0">stop</button>
+
+            </div>
+            <div class="jp-rating">
+                <input type="text" class="rating rating-loading" value="2" data-size="xs" title="">
+
             </div>
             <div class="jp-progress">
                 <div class="jp-seek-bar">
@@ -38,14 +43,11 @@
                 <button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
             </div>
         </div>
-        <div class="jp-playlist">
-            <ul>
-                <li>&nbsp;</li>
-            </ul>
-        </div>
+
         <div class="jp-no-solution">
             <span>Update Required</span>
             To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
         </div>
     </div>
 </div>
+    </div>
