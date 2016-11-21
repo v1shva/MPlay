@@ -24,11 +24,35 @@
                 <label for="pwd">Artist:</label>
                 <input type="text" class="form-control" id="pwd">
             </div>
+            <div class="form-group songupload">
+
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#url" aria-controls="home" role="tab" data-toggle="tab">Upload File</a></li>
+                    <li role="presentation"><a href="#upfile" aria-controls="profile" role="tab" data-toggle="tab">URL</a></li>
+                </ul>
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane active" id="url">
+                        <div class="form-group" >
+                            <div class="form-group">
+                                <input id="fileup" type="file" class="file" data-upload-url="#">
+                            </div>
+
+                        </div>
+                    </div>
+                    <div role="tabpanel" class="tab-pane" id="upfile">
+                        <label for="pwd">URL:</label>
+                        <input type="text" class="form-control" id="pwd">
+                    </div>
+                </div>
+
+            </div>
             <div class="checkbox">
                 <label><input type="checkbox"> I agree </label>
             </div>
             <button type="submit" class="btn btn-default">Submit</button>
+
         </form>
 
     </div>
 </div>
+

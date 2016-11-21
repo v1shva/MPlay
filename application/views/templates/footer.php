@@ -8,10 +8,32 @@
 ?>
 
 
-<script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
+<script>
+    $("#fileup").fileinput({'showUpload':false,
+        allowedFileExtensions: ["mp3", "wma"],
+        previewSettings: {
+            initialPreviewShowDelete: false,
+            image: {width: "auto", height: "160px"},
+            html: {width: "213px", height: "160px"},
+            text: {width: "160px", height: "136px"},
+            video: {width: "213px", height: "160px"},
+            audio: {width: "50px", height: "80px"},
+            flash: {width: "213px", height: "160px"},
+            object: {width: "50px", height: "160px"},
+            other: {width: "160px", height: "160px"}
+        },
+        layoutTemplate:
+        initialPreviewShowDelete: false
+    });
+
+
+
+</script>
+
 <script type="text/javascript">
     //<![CDATA[
     $(document).ready(function(){

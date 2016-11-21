@@ -11,10 +11,18 @@
             <meta charset="utf-8" />
             <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <title>mPlay</title>
+                <link rel="stylesheet" href="<?php echo base_url("assets/fileinput/css/fileinput.css"); ?>"  media="all" rel="stylesheet" type="text/css">
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
                 <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/blue.monday/css/jplayer.blue.monday.min.css"); ?>" />
+            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+            <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>
+            <script src="<?php echo base_url("assets/fileinput/js/locales/fr.js"); ?>" type="text/javascript"></script>
+            <script src="<?php echo base_url("assets/fileinput/js/locales/es.js"); ?>" type="text/javascript"></script>
+            <script>
 
+
+            </script>
 
         </head>
         <body>
