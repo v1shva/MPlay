@@ -12,6 +12,14 @@
 <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
+<script>
+    $("#fileup").fileinput({'showUpload':false,
+        allowedFileExtensions: ["mp3", "wma"]
+    });
+
+
+
+</script>
 
 <script type="text/javascript">
     //<![CDATA[
