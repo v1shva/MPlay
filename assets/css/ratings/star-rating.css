@@ -119,6 +119,7 @@
     display: inline-block;
     vertical-align: middle;
     font-size: 60%;
+    display: none;
 }
 
 .clear-rating-active {
@@ -142,6 +143,7 @@
     vertical-align: middle;
     font-size: 60%;
     margin-top: -0.6em;
+    display: none;
 }
 
 .rating-container .caption {

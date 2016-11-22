@@ -85,6 +85,11 @@
   /* Rules for IE6 (full-screen) */
   bottom: 0;
   left: 0; }
+.jp-ratings {
+  position: absolute;
+  top: 23px;
+  right: 120px;
+  width: 200px; }
 
 .jp-interface {
   position: relative;
