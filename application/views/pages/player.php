@@ -18,9 +18,8 @@
                 <button class="jp-stop" role="button" tabindex="0">stop</button>
 
             </div>
-            <div class="jp-rating">
+            <div class="jp-ratings">
                 <input type="text" class="rating rating-loading" value="2" data-size="xs" title="">
-
             </div>
             <div class="jp-progress">
                 <div class="jp-seek-bar">
