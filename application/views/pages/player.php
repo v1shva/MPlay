@@ -50,3 +50,5 @@
     </div>
 </div>
     </div>
+<script type="text/javascript" src="../../dist/jplayer/jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="../../dist/add-on/jplayer.playlist.min.js"></script>

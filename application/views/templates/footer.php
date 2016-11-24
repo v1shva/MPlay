@@ -13,6 +13,7 @@
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+
 <script type="text/javascript">
     //<![CDATA[
     $(document).ready(function(){

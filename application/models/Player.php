@@ -8,7 +8,14 @@
 
 class Player extends CI_model{
     public function getPlaylist(){
-        $this->load->database();
-        
+        $db=$this->load->database();
+        $query = $this->db->query("SELECT * FROM song");
+        foreach ($query->result() as $row)
+        {
+            $playlist[]['title'] =  $row->Title;
+            $playlist[]['path'] =  $row->path;
+        }
+
+        return ( $playlist);
     }
 }

@@ -17,14 +17,14 @@
                 <h4 class="modal-title">Add your Song</h4>
             </div>
             <div class="modal-body">
-                <form class="form addsongform">
+                <form class="form addsongform" method="post">
                     <div class="form-group">
                         <label for="email">Song Title:</label>
-                        <input type="email" class="form-control" id="email">
+                        <input type="email" class="form-control" name="title">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Artist:</label>
-                        <input type="text" class="form-control" id="pwd">
+                        <input type="text" class="form-control" name="artist">
                     </div>
                     <div class="form-group songupload">
                         <ul class="nav nav-tabs" role="tablist">
@@ -35,14 +35,14 @@
                             <div role="tabpanel" class="tab-pane active" id="url">
                                 <div class="form-group" >
                                     <div class="form-group">
-                                        <input id="fileup" type="file" class="file" data-upload-url="#">
+                                        <input id="fileup" name="fileup" type="file" class="file" data-upload-url="#">
                                     </div>
 
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane" id="upfile">
                                 <label for="pwd">URL:</label>
-                                <input type="text" class="form-control" id="pwd">
+                                <input type="text" class="form-control" id="pwd" name="url" >
                             </div>
                         </div>
                     </div>
