@@ -13,14 +13,16 @@ class Song extends CI_Controller {
 
     public function addsong()
     {
-        //$this->load->helper('form');
+        $this->load->helper(array('form', 'url', 'html'));
         $this->load->model('AddSong');
         $data = array(
             'Title' => $this->input->post('title'),
             'Artist' => $this->input->post('artist'),
-            'path' => $this->input->post('path')
+            'path' => $this->input->post('url')
         );
         $this->load->model('AddSong');
-        $this->AddSong->addsongdb($data);
+        if($this->AddSong->addsongdb($data)){
+            redirect('/RegPages/view');
+        };
     }
 }

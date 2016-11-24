@@ -17,14 +17,31 @@
                 <h4 class="modal-title">Add your Song</h4>
             </div>
             <div class="modal-body">
-                <form class="form addsongform" method="post">
+                <?php echo form_open('Song/addsong'); ?>
                     <div class="form-group">
-                        <label for="email">Song Title:</label>
-                        <input type="email" class="form-control" name="title">
+                        <label>Song Title:</label>
+                        <input type="text" class="form-control" name="title">
                     </div>
                     <div class="form-group">
                         <label for="pwd">Artist:</label>
                         <input type="text" class="form-control" name="artist">
+                    </div>
+                    <div class="form-group">
+                        <label for="pwd">Mood:</label>
+                        <div class="container-fluid moods">
+                            <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" >
+                            <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/smile.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/suspicious.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                        </div>
                     </div>
                     <div class="form-group songupload">
                         <ul class="nav nav-tabs" role="tablist">

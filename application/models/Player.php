@@ -15,7 +15,6 @@ class Player extends CI_model{
             $playlist[]['title'] =  $row->Title;
             $playlist[]['path'] =  $row->path;
         }
-
         return ( $playlist);
     }
 }

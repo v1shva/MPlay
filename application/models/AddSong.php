@@ -7,8 +7,8 @@
  */
 class AddSong extends CI_model{
     public function addsongdb($details){
-        $target = "test";
         $db=$this->load->database();
-        $this->db->insert('Song',$details);
+        $success = $this->db->insert('Song',$details);
+        return ($success);
     }
 }
