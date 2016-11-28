@@ -24,46 +24,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 <div class="main">
 		
-<div id="fb-root"></div>
-<div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1333665393318441";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>	
-<script>
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1333665393318441',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- 
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-	
-{
-    status: 'connected',
-    authResponse: {
-        accessToken: '...',
-        expiresIn:'...',
-        signedRequest:'...',
-        userID:'...'
-    }
-}	
-</script>
 		
 		
 		
@@ -73,7 +34,7 @@ FB.getLoginStatus(function(response) {
 		
 		
 		
-		<!-- <div class="w3_login">
+		<div class="w3_login">
 			<div class="w3_login_module">
 				<div class="module form-module">
 				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
@@ -121,7 +82,7 @@ FB.getLoginStatus(function(response) {
 				  }, "slow");
 				});
 			</script>
-		</div>-->
+		</div>
 		
 	</div>
 </body>
