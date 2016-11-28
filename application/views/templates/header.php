@@ -16,7 +16,6 @@
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
             <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css"); ?>"/>
             <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/whiteskin/css/jplayer.flat.white.css"); ?>" />
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="assets/css/ratings/star-rating.css" media="all" type="text/css">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -56,8 +55,7 @@
                             </div>
                         </form>
                         <ul class="nav navbar-nav navbar-right">
-                            <li><a href="<?php echo base_url("index.php/Signup/view/Signup"); ?>"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                            <li><a href="<?php echo base_url("index.php/LoginSignUp/view"); ?>"><span class="glyphicon glyphicon-log-in"></span> Login/Sign Up</a></li>
                         </ul>
 
 

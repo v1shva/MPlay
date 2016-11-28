@@ -14,7 +14,6 @@ class Song extends CI_Controller {
     public function addsong()
     {
         $this->load->helper(array('form', 'url', 'html'));
-        $this->load->model('AddSong');
         $data = array(
             'Title' => $this->input->post('title'),
             'Artist' => $this->input->post('artist'),

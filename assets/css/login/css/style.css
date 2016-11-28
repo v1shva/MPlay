@@ -100,8 +100,8 @@ input[type="submit"],.agileits_copyright p a,.form-module .cta a{
   top: -0;
   right: -0;
   background:#3498db;
-  width: 30px;
-  height: 30px;
+  width: 160px;
+  height: 40px;
   margin: -5px 0 0;
   color: #ffffff;
   font-size: 12px;
@@ -196,16 +196,16 @@ input[type="submit"],.agileits_copyright p a,.form-module .cta a{
 	color:#212121;
 }
 i.fa.fa-times.fa-pencil {
-    background:url(../images/1.png) no-repeat 7px 5px;
+    background:url(../images/1.png);
     display: block;
-    width: 30px;
-    height: 30px;
+    width: 160px;
+    height: 40px;
 }
 i.fa.fa-times{
-	background:url(../images/2.png) no-repeat 7px 6px;
+	background:url(../images/2.png);
     display: block;
-    width: 30px;
-    height: 30px;
+	width: 160px;
+	height: 40px;
 }
 /*-- //login --*/
 /*-- start-responsive-design --*/

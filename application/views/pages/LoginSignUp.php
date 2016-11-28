@@ -52,8 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="w3_login">
 			<div class="w3_login_module">
 				<div class="module form-module">
-				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-					<div class="tooltip">Click Me</div>
+				  <div class="toggle"><div class="fa fa-times fa-pencil"></div>
 				  </div>
 
 					<div class="form">
