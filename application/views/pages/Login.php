@@ -23,14 +23,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 	
 	
-	<div class="main">
+	<!--<div class="main">-->
 		
-		<script>
-  window.fbAsyncInit = function() {
+<div id="fb-root"></div>
+<div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1333665393318441";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>	
+<script>
+window.fbAsyncInit = function() {
     FB.init({
       appId      : '1333665393318441',
       xfbml      : true,
-      version    : 'v2.8'
+      version    : 'v2.6'
     });
   };
 
@@ -41,14 +50,23 @@ License URL: http://creativecommons.org/licenses/by/3.0/
      js.src = "//connect.facebook.net/en_US/sdk.js";
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
-	</script>
+ 
+FB.getLoginStatus(function(response) {
+    statusChangeCallback(response);
+});
 	
-	<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-       </div>
+{
+    status: 'connected',
+    authResponse: {
+        accessToken: '...',
+        expiresIn:'...',
+        signedRequest:'...',
+        userID:'...'
+    }
+}	
+</script>
+		
+		
 		
 		
 		
@@ -106,6 +124,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</script>
 		</div>-->
 		
-	</div>
+	<!--</div>-->
 </body>
 </html>
