@@ -22,8 +22,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 	
 	
-	
-	<!--<div class="main">-->
+<div class="main">
 		
 <div id="fb-root"></div>
 <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
@@ -124,6 +123,6 @@ FB.getLoginStatus(function(response) {
 			</script>
 		</div>-->
 		
-	<!--</div>-->
+	</div>
 </body>
 </html>
