@@ -52,9 +52,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						</form>
 					</div>
 				  
+<<<<<<< Updated upstream
 
 
 				  <div class="cta"><a href="#">Forgot your password?</a></div>
+=======
+				  <div class="form">
+					<h2>Login to your account</h2>
+					<form action="#" method="post">
+					  <input type="text" name="Username" placeholder="Username" required=" ">
+					  <input type="password" name="Password" placeholder="Password" required=" ">
+					  <input type="submit" value="Login">
+					</form>
+				  </div>
+				  
+				  <div class="cta"><a href="<?php echo base_url("index.php/ForgetPassword/view/recover"); ?>">Forgot your password?</a></div>
+>>>>>>> Stashed changes
 				</div>
 			</div>
 			<script>
