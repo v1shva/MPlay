@@ -28,14 +28,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="tooltip">Click Me</div>
 				  </div>
 
-					<div class="form">
-						<h2>Login to your account</h2>
-						<form action="#" method="post">
-							<input type="text" name="Username" placeholder="Username" required=" ">
-							<input type="password" name="Password" placeholder="Password" required=" ">
-							<input type="submit" value="Login">
-						</form>
-					</div>
+
 				  <div class="form">
 					<h2>Create an account</h2>
 					<form action="#" method="post">
@@ -50,6 +43,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="submit" value="Register">
 					</form>
 				  </div>
+					<div class="form">
+						<h2>Login to your account</h2>
+						<form action="#" method="post">
+							<input type="text" name="Username" placeholder="Username" required=" ">
+							<input type="password" name="Password" placeholder="Password" required=" ">
+							<input type="submit" value="Login">
+						</form>
+					</div>
 				  
 
 
