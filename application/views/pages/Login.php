@@ -19,8 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-	<h1>Hellow World</h1>
-	<p>Test Case Test Case Test Case</p>
+	
 	
 	<script>
   window.fbAsyncInit = function() {
