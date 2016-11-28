@@ -31,7 +31,7 @@
         </div>
 
         <br>
-        <p>Community based music app. Let's share our love for music</p>
+        <p>Emotion based community music app. Let's share our love for music</p>
         <a href="#">Learn More</a>
 
 

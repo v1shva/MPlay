@@ -18,11 +18,33 @@ class Song extends CI_Controller {
         $data = array(
             'Title' => $this->input->post('title'),
             'Artist' => $this->input->post('artist'),
-            'path' => $this->input->post('url')
+            'path' => $this->input->post('url'),
         );
         $this->load->model('AddSong');
         if($this->AddSong->addsongdb($data)){
-            redirect('/RegPages/view');
+            echo 'true';
+        }
+        else{
+            echo 'false';
         };
+
+
+    }
+
+    public function uploadSong()
+    {
+        $this->load->helper(array('form', 'url', 'html'));
+
+        $config['upload_path']          = 'media/songs/';
+        $config['max_size']  = 10000;
+        $config['allowed_types']        = 'mp3|wma';
+
+        $this->load->library('upload', $config);
+        if(!$this->upload->do_upload('fileup')){
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+        }
+
+
     }
 }
