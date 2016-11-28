@@ -44,6 +44,9 @@ class Song extends CI_Controller {
             $error = array('error' => $this->upload->display_errors());
             print_r($error);
         }
+        $data = '{}';
+        header('Content-Type: application/json');
+        echo json_encode($data);
 
 
     }

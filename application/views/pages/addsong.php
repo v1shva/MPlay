@@ -7,6 +7,9 @@
  */?>
 
 <!-- Modal -->
+<script>
+    $("#fileup").fileinput({'showUpload':true, 'previewFileType':'any'});
+</script>
 <div class="modal fade" id="addsong" role="dialog">
     <div class="modal-dialog">
 
@@ -52,7 +55,7 @@
                             <div role="tabpanel" class="tab-pane active" id="url">
                                 <div class="form-group" >
                                     <div class="form-group">
-                                        <input id="fileup" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/Song/uploadSong'; ?>">
+                                        <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/Song/uploadSong'; ?>">
                                     </div>
 
                                 </div>
@@ -67,7 +70,7 @@
                     <div class="checkbox">
                         <label><input type="checkbox"> I agree </label>
                     </div>
-                    <button id="submitdata" type="submit" class="btn btn-default">Submit</button>
+                    <button id="submitdata" type="submit" class="btn btn-default fileinput-upload fileinput-upload-button">Submit</button>
 
                 </form>
             </div>
@@ -87,13 +90,11 @@
             var title = $("input#title").val();
             var artist = $("input#artist").val();
             var url = $("input#url").val();
-            //var fileup = $("input#fileup").files;
-            //alert(fileup);
             jQuery.ajax({
                 type: "POST",
                 url: "<?php echo base_url(); ?>" + "index.php/Song/addsong",
                 dataType: 'json',
-                data: {title: title, artist: artist,url:url,fileup:fileup},
+                data: {title: title, artist: artist,url:url},
                 complete: function(r){
                     if (r.responseText == 'true'){
                         $("#addsongContent").html("" +
