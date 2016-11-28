@@ -52,7 +52,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="w3_login">
 			<div class="w3_login_module">
 				<div class="module form-module">
-				  <div class="toggle"><div class="fa fa-times fa-pencil"></div>
+				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
 				  </div>
 
 					<div class="form">
@@ -61,7 +61,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
 							<input type="submit" value="Login">
+
 						</form>
+						<br>
+						<div class="cta"><a href="#">Forgot your password?</a></div>
+
 					</div>
 				  <div class="form">
 					<h2>Create an account</h2>
@@ -80,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  
 
 
-				  <div class="cta"><a href="#">Forgot your password?</a></div>
+
 				</div>
 			</div>
 			<script>
