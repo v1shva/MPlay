@@ -148,6 +148,10 @@
   text-indent: -9999px;
   border: none;
   cursor: pointer; }
+#show{
+float: right;
+right: 3%;
+}
 
 .jp-play {
   width: 40px;
@@ -348,7 +352,9 @@
   width: 100%;
   background-color: #ccc;
   border-top: 1px solid #009be3; }
+.jp-playlist-button{
 
+}
 .jp-type-single .jp-details,
 .jp-type-playlist .jp-details {
   border-top: none; }
