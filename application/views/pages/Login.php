@@ -21,7 +21,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	
 	
-	<script>
+	
+	
+	<div class="main">
+		
+		<script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1333665393318441',
@@ -45,10 +49,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   data-width="450"
   data-show-faces="true">
        </div>
-	
-	<div class="main">
 		
-		<div class="w3_login">
+		
+		
+		
+		
+		
+		
+		<!-- <div class="w3_login">
 			<div class="w3_login_module">
 				<div class="module form-module">
 				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
@@ -96,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				  }, "slow");
 				});
 			</script>
-		</div>
+		</div>-->
 		
 	</div>
 </body>
