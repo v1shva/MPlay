@@ -19,8 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-	<h1>Hellow World</h1>
-	<p>Test Case Test Case Test Case</p>
+	
  <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -59,12 +58,12 @@ FB.getLoginStatus(function(response) {
 }	
 </script>
 	
-	<div
+	<!--<div
   class="fb-like"
   data-share="true"
   data-width="450"
   data-show-faces="true">
-       </div>
+       </div>-->
 	
 	
 	
