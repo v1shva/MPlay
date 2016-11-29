@@ -14,6 +14,7 @@
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
             <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css"); ?>"/>
             <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/whiteskin/css/jplayer.flat.white.css"); ?>" />
             <link rel="stylesheet" href="assets/css/ratings/star-rating.css" media="all" type="text/css">

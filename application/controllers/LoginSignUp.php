@@ -31,6 +31,28 @@ class LoginSignUp extends CI_Controller {
             $result = $this->model_login->email_exists('$email');
         }
     }
+
+    public function addUserDB()
+    {
+        $this->load->helper(array('form', 'url', 'html'));
+        $data = array(
+            'name' => $this->input->post('Name'),
+            'birthday' => $this->input->post('DOB'),
+            'country' => $this->input->post('Country'),
+            'motheLanguage' => $this->input->post('Mlanguage'),
+            'email' => $this->input->post('Email'),
+            'password' => $this->input->post('Password'),
+        );
+        $this->load->model('LoginSignUp');
+        if($this->AddSong->addUserDB($data)){
+            echo 'true';
+        }
+        else{
+            echo 'false';
+        };
+
+
+    }
 }
 
 ?>

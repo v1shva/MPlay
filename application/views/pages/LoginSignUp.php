@@ -19,45 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 </head>
 
 <body>
-	
- <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1333665393318441";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>	
-<script>
-window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1333665393318441',
-      xfbml      : true,
-      version    : 'v2.6'
-    });
-  };
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
- 
-FB.getLoginStatus(function(response) {
-    statusChangeCallback(response);
-});
-	
-{
-    status: 'connected',
-    authResponse: {
-        accessToken: '...',
-        expiresIn:'...',
-        signedRequest:'...',
-        userID:'...'
-    }
-}	
-</script>
-	
+
 	<!--<div
   class="fb-like"
   data-share="true"
@@ -93,14 +55,14 @@ FB.getLoginStatus(function(response) {
 				  <div class="form">
 					<h2>Create an account</h2>
 					<form action="" method="post">
-						<input type="text" name="Name" placeholder="Name" required=" ">
-						<input type="date" name="Dob" placeholder="Date Of Birth" required=" ">
-						<input type="text" name="Country" placeholder="Country" required=" ">
-						<input type="text" name="Mlanguage" placeholder="Mother Language" required=" ">
-						<input type="text" name="Username" placeholder="Username" required=" ">
-						<input type="email" name="Email" placeholder="Email Address" required=" ">
-						<input type="password" name="Password" placeholder="Password" required=" ">
-						<input type="submit" value="Register">
+						<input type="text" id="name" name="Name" placeholder="Name" required=" ">
+						<input type="date" id="Dob" name="Dob" placeholder="Date Of Birth" required=" ">
+						<input type="text" id="Country" name="Country" placeholder="Country" required=" ">
+						<input type="text" id="Mlanguage" name="Mlanguage" placeholder="Mother Language" required=" ">
+						<input type="text" id="Username" name="Username" placeholder="Username" required=" ">
+						<input type="email" id="Email" name="Email" placeholder="Email Address" required=" ">
+						<input type="password" id="Password" name="Password" placeholder="Password" required=" ">
+						<input id="register" type="submit" value="Register"  data-toggle="modal" data-target="#infoModal" >
 					</form>
 				  </div>
 				  
@@ -122,8 +84,78 @@ FB.getLoginStatus(function(response) {
 				  }, "slow");
 				});
 			</script>
+
 		</div>
 		
 	</div>
+	<div class="modal fade" id="infoModal" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content" id="addsongContent">
+				<div class="modal-header">
+					<div class="bootstrap-dialog-header">
+						<div class="bootstrap-dialog-close-button" ><button class="close">×</button></div>
+						<div class="bootstrap-dialog-title">Loading...</div>
+					</div>
+				</div>
+				<div class="modal-body">
+
+
+
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+			</div>
+
+		</div>
+	</div>
 </body>
+<script>
+	$(document).ready(function() {
+		$("#register").click(function(event) {
+			event.preventDefault();
+			BootstrapDialog.show({
+				title: 'Loading',
+				message: 'Your data is being submitted to the database',
+
+			});
+			var name = $("input#name").val();
+			var Dob = $("input#Dob").val();
+			var Country = $("input#Country").val();
+			var Mlanguage = $("input#Mlanguage").val();
+			var Username = $("input#Username").val();
+			var Email = $("input#Email").val();
+			var Password = $("input#Password").val();
+			jQuery.ajax({
+				type: "POST",
+				url: "<?php echo base_url(); ?>" + "index.php/LoginSignUp/addUserDB",
+				dataType: 'json',
+				data: {name: name, Dob: Dob,Country:Country,Mlanguage:Mlanguage,Username:Username,Email:Email,Password:Password},
+				/*
+				 complete: function(r){
+				 if (r.responseText == 'true'){
+				 $("#addsongContent").html("" +
+				 "<div class=\"modal-header\">"+
+				 "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>"+
+				 "<h4 class=\"modal-title\">Sucess</h4>"+
+				 "</div>"+
+				 "<div class=\"modal-body\">"+
+				 "<div class=\"alert alert-success\">"+
+				 "<strong>Song added to the database!</strong>"+
+				 "</div>"+
+				 "</div>"+
+				 "<div class=\"modal-footer\">"+
+				 "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>"+
+				 "</div>"
+				 );
+				 }
+				 else{
+				 $("#addsongContent").html(r.responseText);
+				 }
+				 }*/
+			});
+		});
+	});
+</script>
 </html>
