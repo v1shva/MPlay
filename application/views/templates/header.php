@@ -16,7 +16,6 @@
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
             <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css"); ?>"/>
             <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/whiteskin/css/jplayer.flat.white.css"); ?>" />
-            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
             <link rel="stylesheet" href="assets/css/ratings/star-rating.css" media="all" type="text/css">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             <script src="assets/js/ratings/star-rating.js" type="text/javascript"></script>
@@ -45,7 +44,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="active"><a href="<?php echo base_url(); ?>">Home <span class="sr-only">(current)</span></a></li>
                             <li><a href="#">About Us</a></li>
 
                         </ul>
