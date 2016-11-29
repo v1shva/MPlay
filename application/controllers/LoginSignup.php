@@ -1,12 +1,12 @@
 <?php
 
 class LoginSignUp extends CI_Controller {
-    public function __construct()
+    /*public function __construct()
     {
         parent::_construct();
         $this->load->model('model_login');
 
-    }
+    }*/
 
     public function view($page = 'LoginSignUp')
     {
