@@ -22,7 +22,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h1>Hellow World</h1>
 	<p>Test Case Test Case Test Case</p>
 	
-	<script>
+	
+	
+	<div class="main">
+		
+		<div class="w3_login">
+			<div class="w3_login_module">
+				<div class="module form-module">
+				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+				  </div>
+
+					<div class="form">
+						<h2>Login to your account</h2>
+						<form action="#" method="post">
+							<input type="text" name="Username" placeholder="Username" required=" ">
+							<input type="password" name="Password" placeholder="Password" required=" ">
+							<input type="submit" value="Login">
+                                                        <hr style="color:black;">
+							<script>
   window.fbAsyncInit = function() {
     FB.init({
       appId      : '1333665393318441',
@@ -46,22 +63,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   data-width="450"
   data-show-faces="true">
        </div>
-	
-	<div class="main">
-		
-		<div class="w3_login">
-			<div class="w3_login_module">
-				<div class="module form-module">
-				  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-				  </div>
-
-					<div class="form">
-						<h2>Login to your account</h2>
-						<form action="#" method="post">
-							<input type="text" name="Username" placeholder="Username" required=" ">
-							<input type="password" name="Password" placeholder="Password" required=" ">
-							<input type="submit" value="Login">
-                                                        <hr style="color:black;">
 						</form>
 						<br>
 						<div class="cta"><a href="#">Forgot your password?</a></div>
