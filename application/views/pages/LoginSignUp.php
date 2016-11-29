@@ -92,8 +92,8 @@ FB.getLoginStatus(function(response) {
 					</div>
 				  <div class="form">
 					<h2>Create an account</h2>
-					<form action="#" method="post">
-					        <input type="text" name="Name" placeholder="Name" required=" ">
+					<form action="" method="post">
+						<input type="text" name="Name" placeholder="Name" required=" ">
 						<input type="date" name="Dob" placeholder="Date Of Birth" required=" ">
 						<input type="text" name="Country" placeholder="Country" required=" ">
 						<input type="text" name="Mlanguage" placeholder="Mother Language" required=" ">
