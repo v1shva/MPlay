@@ -27,7 +27,7 @@
 
 					<h2>Enter Your Email to reset the password</h2>
 					  <form action="{{ urlFor('password.recover.post') }}" method="post">
-					  <input type="Email" name="Email" placeholder="Email" required=" ">
+					  <input type="Email" name="email" placeholder="Email" required=" ">
 					  <input type="submit" value="Vertify">
 					</form>
 				  </div>
