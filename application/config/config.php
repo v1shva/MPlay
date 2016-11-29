@@ -73,8 +73,12 @@ $config['uri_protocol']	= 'REQUEST_URI';
 | https://codeigniter.com/user_guide/general/urls.html
 */
 $config['url_suffix'] = '';
-
+/*Site adminitstrater email adress*/
+$config['admin_email'] ='maduraherath8@gmail.com';
+/*Site bot email adress*/
+$config['bot_email'] ='maduraherath8@gmail.com';
 /*
+
 |--------------------------------------------------------------------------
 | Default Language
 |--------------------------------------------------------------------------
