@@ -61,7 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
 							<input type="submit" value="Login">
-                                                        <hr>
+                                                        <hr style="color:black;">
 						</form>
 						<br>
 						<div class="cta"><a href="#">Forgot your password?</a></div>
