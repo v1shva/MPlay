@@ -17,11 +17,10 @@
             <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
             <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css"); ?>"/>
             <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/whiteskin/css/jplayer.flat.white.css"); ?>" />
-            <link rel="stylesheet" href="assets/css/ratings/star-rating.css" media="all" type="text/css">
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/ratings/star-rating.css");?>" media="all" type="text/css">
             <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-            <script src="assets/js/ratings/star-rating.js" type="text/javascript"></script>
+            <script src="<?php echo base_url("assets/js/ratings/star-rating.js");?>" type="text/javascript"></script>
 
-            <link rel="stylesheet" href="animate.min.css">
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
         </head>

@@ -111,7 +111,7 @@ Step 1: Load the following assets in your header.
 <link href="path/to/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
 
 <!-- important mandatory libraries -->
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>
+<!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.js"></script>-->
 <script src="path/to/js/star-rating.js" type="text/javascript"></script>
 
 <!-- optionally if you need to use a theme, then include the theme JS file as mentioned below -->

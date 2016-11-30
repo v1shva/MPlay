@@ -62,13 +62,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="text" id="Username" name="Username" placeholder="Username" required=" ">
 						<input type="email" id="Email" name="Email" placeholder="Email Address" required=" ">
 						<input type="password" id="Password" name="Password" placeholder="Password" required=" ">
-						<input id="register" type="submit" value="Register"  data-toggle="modal" data-target="#infoModal" >
+						<input id="register" type="submit" value="Register" >
 					</form>
 				  </div>
-				  
-
-
-
 				</div>
 			</div>
 			<script>
@@ -90,15 +86,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="modal fade" id="infoModal" role="dialog">
 		<div class="modal-dialog">
-			<div class="modal-content" id="addsongContent">
-				<div class="modal-header">
+			<div class="modal-content" id="infoModalContent">
+				<div class="modal-header" style="background-color: #337ab7;color:white">
 					<div class="bootstrap-dialog-header">
 						<div class="bootstrap-dialog-close-button" ><button class="close">×</button></div>
-						<div class="bootstrap-dialog-title">Loading...</div>
+						<div class="bootstrap-dialog-title"><h3>Loading...</h3></div>
 					</div>
 				</div>
 				<div class="modal-body">
-
+				<h4> Your data is being processed.</h4>
+					<div class="loadersmall"></div>
 
 
 				</div>
@@ -106,20 +103,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
-			</div>
-
 		</div>
 	</div>
+
 </body>
 <script>
 	$(document).ready(function() {
 		$("#register").click(function(event) {
 			event.preventDefault();
-			BootstrapDialog.show({
-				title: 'Loading',
-				message: 'Your data is being submitted to the database',
-
-			});
+			$('#infoModal').modal('show');
+			alert("hello");
 			var name = $("input#name").val();
 			var Dob = $("input#Dob").val();
 			var Country = $("input#Country").val();

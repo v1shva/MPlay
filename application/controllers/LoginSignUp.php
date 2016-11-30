@@ -39,12 +39,12 @@ class LoginSignUp extends CI_Controller {
             'name' => $this->input->post('Name'),
             'birthday' => $this->input->post('DOB'),
             'country' => $this->input->post('Country'),
-            'motheLanguage' => $this->input->post('Mlanguage'),
+            'mlang' => $this->input->post('Mlanguage'),
             'email' => $this->input->post('Email'),
             'password' => $this->input->post('Password'),
         );
-        $this->load->model('LoginSignUp');
-        if($this->AddSong->addUserDB($data)){
+        $this->load->model('UserModel',"", TRUE);
+        if($this->UserModel->addUserDB($data)){
             echo 'true';
         }
         else{
