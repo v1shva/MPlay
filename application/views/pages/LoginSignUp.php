@@ -86,21 +86,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	</div>
 	<div class="modal fade" id="infoModal" role="dialog">
 		<div class="modal-dialog">
-			<div class="modal-content" id="infoModalContent">
-				<div class="modal-header" style="background-color: #337ab7;color:white">
+			<div class="modal-content">
+				<div class="modal-header" id="header" style="background-color: #337ab7;color:white">
 					<div class="bootstrap-dialog-header">
-						<div class="bootstrap-dialog-close-button" ><button class="close">×</button></div>
+						<div class="bootstrap-dialog-close-button" ></div>
 						<div class="bootstrap-dialog-title"><h3>Loading...</h3></div>
 					</div>
 				</div>
-				<div class="modal-body">
+				<div class="modal-body" id="body">
 				<h4> Your data is being processed.</h4>
 					<div class="loadersmall"></div>
 
 
 				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<div class="modal-footer" id="footer">
+
 				</div>
 			</div>
 		</div>
@@ -111,6 +111,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	$(document).ready(function() {
 		$("#register").click(function(event) {
 			event.preventDefault();
+			$('#infoModal').modal({backdrop: 'static', keyboard: false})
 			$('#infoModal').modal('show');
 			alert("hello");
 			var name = $("input#name").val();
@@ -125,28 +126,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				url: "<?php echo base_url(); ?>" + "index.php/LoginSignUp/addUserDB",
 				dataType: 'json',
 				data: {name: name, Dob: Dob,Country:Country,Mlanguage:Mlanguage,Username:Username,Email:Email,Password:Password},
-				/*
+
 				 complete: function(r){
 				 if (r.responseText == 'true'){
-				 $("#addsongContent").html("" +
-				 "<div class=\"modal-header\">"+
-				 "<button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>"+
-				 "<h4 class=\"modal-title\">Sucess</h4>"+
-				 "</div>"+
-				 "<div class=\"modal-body\">"+
-				 "<div class=\"alert alert-success\">"+
-				 "<strong>Song added to the database!</strong>"+
-				 "</div>"+
-				 "</div>"+
-				 "<div class=\"modal-footer\">"+
-				 "<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>"+
-				 "</div>"
-				 );
+				 	$(".modal-header#header").html("Verify your Email");
+					 $(".modal-header#header").css("background-color","#5cb85c");
+					 $(".modal-body#body").html("Please check your email to verify your email address");
+					 $(".modal-footer#footer").html("<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>");
 				 }
 				 else{
-				 $("#addsongContent").html(r.responseText);
+					 $(".modal-header#header").html("Failed");
+					 $(".modal-header#header").css("background-color","#d9534f");
+					 $(".modal-body#body").html("Sign in process failed");
+					 $(".modal-footer#footer").html("<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>");
+
 				 }
-				 }*/
+				 }
 			});
 		});
 	});
