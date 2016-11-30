@@ -43,7 +43,7 @@ class LoginSignUp extends CI_Controller {
             'email' => $this->input->post('Email'),
             'password' => $this->input->post('Password'),
         );
-        $this->load->model('UserModel',"", TRUE);
+        $this->load->model('UserModel');
         if($this->UserModel->addUserDB($data)){
             echo 'true';
         }
