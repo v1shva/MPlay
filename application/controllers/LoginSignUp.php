@@ -35,6 +35,7 @@ class LoginSignUp extends CI_Controller {
     public function addUserDB()
     {
         $this->load->helper(array('form', 'url', 'html'));
+
         $data = array(
             'name' => $this->input->post('Name'),
             'birthday' => $this->input->post('DOB'),

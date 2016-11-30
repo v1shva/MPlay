@@ -7,8 +7,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Time: 3:18 PM
  */
 class Song extends CI_Controller {
-    public function __construct() {
+    function __construct()
+    {
         parent::__construct();
+        $this->load->database();
+        $this->load->model('test_model');
     }
 
     public function addsong()
@@ -48,5 +51,10 @@ class Song extends CI_Controller {
         echo json_encode($data);
 
 
+    }
+    public  function load_playlist(){
+        $this->data['songs']= $this->test_model->getSongs();
+        $this->load->view('pages/test',$this->data);
+        $this->load->view('pages/player',$this->data);
     }
 }
