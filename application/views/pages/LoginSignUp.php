@@ -29,7 +29,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	
 <!--facebook login script-->
 
-	<script>(function(d, s, id) {
+	<!--<script>(function(d, s, id) {
 			var js, fjs = d.getElementsByTagName(s)[0];
 			if (d.getElementById(id)) return;
 			js = d.createElement(s); js.id = id;
@@ -65,7 +65,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				userID:'...'
 		}
 		}
-	</script>
+	</script>-->
 
 	<!--end of facebook login script-->	
 	
@@ -88,8 +88,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="password" name="Password" placeholder="Password" required=" ">
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
-					                <div id="fb-root"></div>
-                                                        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
+					               <!-- <div id="fb-root"></div>
+                                                   <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
+                                                                                                           
 
 						</form>
 						<br>
