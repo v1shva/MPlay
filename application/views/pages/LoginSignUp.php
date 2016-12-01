@@ -89,7 +89,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
 					                <div id="fb-root"></div>
-                                                        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+                                                        <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>
 
 						</form>
 						<br>
