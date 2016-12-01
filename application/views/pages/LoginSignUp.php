@@ -87,8 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
 							<input type="submit" value="Login">
-                                                        <hr style="border-top: 1px dotted #8c8b8b;
-	                                                               border-bottom: 1px dotted #fff;">
+                                                        <hr style="border-top: 1px solid #8c8b8b;">
 					                <div id="fb-root"></div>
                                                         <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
 
