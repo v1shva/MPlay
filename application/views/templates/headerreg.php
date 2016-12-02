@@ -44,10 +44,14 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-                            <li><a href="#">About Us</a></li>
+                            <li class="<?php echo $activeHome ?>" ><a href="Home">Home <span class="sr-only">(current)</span></a></li>
+                            <li class="<?php echo $activeAboutUs ?>"><a href="#">About Us</a></li>
 
                         </ul>
+                        <ul class="navbar-right nav navbar-nav">
+                            <li class="<?php echo $activeUser ?>" ><a href="userDetails">User Name <span class="sr-only">(current)</span></a></li>
+                        </ul>
+
                         <form class="navbar-form navbar-right">
                             <div class="form-group">
                                 <input type="text" class="form-control" placeholder="Search">

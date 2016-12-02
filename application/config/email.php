@@ -12,5 +12,8 @@ $config['protocol'] = 'smtp';
 $config['smtp_port'] = '587';
 $config['smtp_host'] = 'smtp.sendgrid.net';
 $config['smtp_user'] = 'mplaymail';
-$config['smtp_pass'] = 'Adminmail1';
+$config['smtp_pass'] = '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';
+$config['smtp_port'] = '587';
+$config['crlf'] = "\r\n";
+$config['newline'] = "\r\n";
 
