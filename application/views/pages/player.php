@@ -75,6 +75,11 @@ $(document).ready(function(){
 		jPlayer: "#jquery_jplayer_1",
 		cssSelectorAncestor: "#jp_container_1"
 	}, [
+		<?php foreach($songs as $song); {?>
+		{
+			title:<?php echo $song->Title; ?>
+		}
+		<?php }?>
 		{
 			title:"Cro Magnon Man",
 			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",

@@ -27,6 +27,50 @@ License URL: http://creativecommons.org/licenses/by/3.0/
   data-show-faces="true">
        </div>-->
 	
+<!--facebook login script-->
+
+	<!--<script>(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1333665393318441";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId      : '1333665393318441',
+				xfbml      : true,
+				version    : 'v2.6'
+			});
+		};
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		FB.getLoginStatus(function(response) {
+			statusChangeCallback(response);
+		});
+
+		{
+			status: 'connected',
+				authResponse: {
+			accessToken: '...',
+				expiresIn:'...',
+				signedRequest:'...',
+				userID:'...'
+		}
+		}
+	</script>-->
+
+	<!--end of facebook login script-->	
+	
+
+	
 	
 	
 	<div class="main">
@@ -43,9 +87,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
 							<input type="submit" value="Login">
-                                                        <hr style="color:black;">
-					                <div id="fb-root"></div>
-                                                        <div class="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+                                                        <hr style="border-top: 1px solid #8c8b8b;">
+					               <!-- <div id="fb-root"></div>
+                                                   <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
+                                                                                                           
 
 						</form>
 						<br>
