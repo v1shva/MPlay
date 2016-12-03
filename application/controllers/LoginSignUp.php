@@ -55,6 +55,63 @@ class LoginSignUp extends CI_Controller {
 
 
     }
+    
+  public function login()
+    {
+        $this->load->library('session');
+        $this->form_validation->set_rules('username', 'username', 'required|trim|max_length[50]|xss_clean');
+        $this->form_validation->set_rules('password', 'password', 'required|trim|max_length[200]|xss_clean');
+        if ($this->form_validation->run() == FALSE) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('pages/'.$page, $data);
+            $this->load->view('templates/footer', $data);
+
+        } else {
+
+            //extract($_POST);
+            //process their input and login the user
+            //$username=$_POST('username');
+            $username=$this->input->post('username');
+            //$password=$_POST('password');
+            $password=$this->input->post('password');
+            // $user_id=$this->user1_model-> check_login($username,$password);
+            //$username=$this->input->post('username');
+
+            $user_id=$this->User1_model->check_login($username,$password);
+            if(! $user_id){
+               //login failed
+                $this->session->set_flashdata('login_error',TRUE);
+
+                redirect(base_url('LoginSignUp'),'refresh');
+
+            }
+            else{
+                //login passed
+                //$CI=&self::get_instance();
+                //echo var_dump($this->CI);
+                $this->session;
+                $login_data=array('logged_in'=> TRUE ,'user_id'=>$user_id);
+                $this->session->set_userdata($login_data);
+                redirect(base_url('pages/main'),'refresh');
+
+            }
+
+
+
+
+        }
+
+
+    }  
+    
+    
+    
+    
+    
+    
 }
+
+
+
 
 ?>
