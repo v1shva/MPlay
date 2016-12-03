@@ -94,7 +94,7 @@ class LoginSignUp extends CI_Controller {
                //login failed
                 $this->session->set_flashdata('login_error',TRUE);
 
-                redirect(base_url('LoginSignUp/view'),'refresh');
+                redirect(site_url('LoginSignUp\view'),'refresh');
 
             }
             else{
