@@ -93,10 +93,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
 							<div class="alert alert-warning">
-                                                          <strong>Warning!</strong> 
+                                                           
 								<?php 
 							   if($this->session->flashdata('login_error') ){
-                                                        		echo "You entered rong data";
+                                                        		echo "<strong>Warning!</strong> You entered rong data";
 										}
 									echo validation_errors(); 
 							?> 
