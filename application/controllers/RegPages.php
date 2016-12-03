@@ -33,6 +33,7 @@ class RegPages extends CI_Controller {
         $this->load->helper(array('form', 'url', 'html'));
         $this->load->library('form_validation');
         $this->load->view('pages/addsong',$data);
+        $this->load->view('pages/userpage', $data);
         //$this->load->view('pages/player',$data);
         $this->load->view('templates/footerreg', $data);
     }
