@@ -67,15 +67,15 @@ class LoginSignUp extends CI_Controller {
 
     }
     
-  public function login()
+  public function login($page = 'LoginSignUp')
     {
         $this->load->library('session');
         $this->form_validation->set_rules('username', 'username', 'required|trim|max_length[50]|xss_clean');
         $this->form_validation->set_rules('password', 'password', 'required|trim|max_length[200]|xss_clean');
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('templates/header', $data);
-            $this->load->view('pages/'.$page, $data);
-            $this->load->view('templates/footer', $data);
+            $this->load->view('templates/header');
+            $this->load->view('pages/'.$page);
+            $this->load->view('templates/footer');
 
         } else {
 
