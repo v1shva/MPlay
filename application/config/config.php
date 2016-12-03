@@ -28,7 +28,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if($_SERVER['HTTP_HOST']=='localhost'){
     $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/';
 }else{
-    $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/';
+    $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/index.php';
 }
 /*$config['base_url'] = "http://mplay.azurewebsites.net/index.php";*/
 
