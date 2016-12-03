@@ -114,6 +114,7 @@ class LoginSignUp extends CI_Controller {
     function logout(){
         $this->session->set_userdata('logged_in',FALSE);
         $this->session->sess_destroy();
+        redirect(site_url('LoginSignUp/view'),'refresh');
     }   
     
  }
