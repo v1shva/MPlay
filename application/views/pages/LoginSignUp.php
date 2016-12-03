@@ -100,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					               <!-- <div id="fb-root"></div>
                                                    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
                                                                                                            
-                                                 <? php echo form_close()?>           
+                                                 <? php echo form_close();?>           
 						<!--</form>-->
 						<br>
 						<div class="cta"><a href="#">Forgot your password?</a></div>
