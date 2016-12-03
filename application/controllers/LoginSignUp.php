@@ -92,7 +92,7 @@ class LoginSignUp extends CI_Controller {
                 $this->session;
                 $login_data=array('logged_in'=> TRUE ,'user_id'=>$user_id);
                 $this->session->set_userdata($login_data);
-                redirect(base_url('pages/main'),'refresh');
+                redirect(base_url('pages/view'),'refresh');
 
             }
 
