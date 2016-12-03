@@ -84,7 +84,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="form">
 						<h2>Login to your account</h2>
 						<!--<form action="LoginSignUp\login_user" method="post">-->
-						   <form action="index.php\LoginSignUp\login" method="post">
+						   <!--<form action="index.php\LoginSignUp\login" method="post">-->
+							   <?php  echo form_open( base_url() .'LoginSignUp/login');?>
 						    
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
@@ -99,8 +100,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					               <!-- <div id="fb-root"></div>
                                                    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
                                                                                                            
-
-						</form>
+                                                 <? php echo form_close()?>           
+						<!--</form>-->
 						<br>
 						<div class="cta"><a href="#">Forgot your password?</a></div>
 
