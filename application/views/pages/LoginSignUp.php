@@ -84,7 +84,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="form">
 						<h2>Login to your account</h2>
 						<!--<form action="LoginSignUp\login_user" method="post">-->
-						   <form action="LoginSignUp\login" method="post">
+						   <form action="<?php echo site_url('LoginSignUp\login');?>" method="post">
 							   
 						    
 							<input type="text" name="Username" placeholder="Username" required=" ">
