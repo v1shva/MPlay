@@ -25,12 +25,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 //$config['base_url'] = 'http://localhost/Mplay/CodeIgniter-3.1.2';
 //$config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/CodeIgniter-3.1.2/';
-if($_SERVER['HTTP_HOST']=='localhost'){
+/*if($_SERVER['HTTP_HOST']=='localhost'){
     $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/Mplay/';
-}
-else{
+}*/
+/*else{
     $config['base_url']    = 'http://'.$_SERVER['HTTP_HOST'].'/';
-}
+}*/
+$config['base_url'] = "http://mplay.azurewebsites.net/index.php";
 
 /*
 |--------------------------------------------------------------------------
