@@ -88,7 +88,7 @@ class LoginSignUp extends CI_Controller {
             // $user_id=$this->user1_model-> check_login($username,$password);
             //$username=$this->input->post('username');
 
-            $user_id=$this->User1_model->check_login($username,$password);
+            $user_id=$this->UserModel->check_login($username,$password);
             if(! $user_id){
                //login failed
                 $this->session->set_flashdata('login_error',TRUE);
