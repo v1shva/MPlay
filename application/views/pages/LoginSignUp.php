@@ -92,12 +92,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							   
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
-							<?php 
+							<div class="alert alert-warning">
+                                                          <strong>Warning!</strong> 
+								<?php 
 							   if($this->session->flashdata('login_error') ){
                                                         		echo "You entered rong data";
 										}
 									echo validation_errors(); 
 							?> 
+							</div>
 					               <!-- <div id="fb-root"></div>
                                                    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
                                                                                                            
