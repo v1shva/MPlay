@@ -56,6 +56,16 @@ class LoginSignUp extends CI_Controller {
 
     }
     
+    public function main_page(){
+        if($this->session->userdata('logged_in')){
+            redirect(base_url('pages/view'),'refresh');
+        }
+        else{
+            redirect(base_url('LoginSignUp'),'refresh');
+        }
+
+    }
+    
   public function login()
     {
         $this->load->library('session');
@@ -92,7 +102,7 @@ class LoginSignUp extends CI_Controller {
                 $this->session;
                 $login_data=array('logged_in'=> TRUE ,'user_id'=>$user_id);
                 $this->session->set_userdata($login_data);
-                redirect(base_url('pages/view'),'refresh');
+                redirect(base_url('LoginSignUp/main_page'),'refresh');
 
             }
 
