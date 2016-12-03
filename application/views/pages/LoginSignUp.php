@@ -83,9 +83,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					<div class="form">
 						<h2>Login to your account</h2>
-						<form action="LoginSignUp\login_user" method="post">
+						<!--<form action="LoginSignUp\login_user" method="post">-->
+						    <form action="LoginSignUp\login" method="post">
 							<input type="text" name="Username" placeholder="Username" required=" ">
 							<input type="password" name="Password" placeholder="Password" required=" ">
+							<?php 
+							   if($this->session->flashdata('login_error') ){
+                                                        		echo "You entered rong data";
+										}
+									echo validation_errors(); 
+							?>    
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
 					               <!-- <div id="fb-root"></div>
