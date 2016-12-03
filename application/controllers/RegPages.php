@@ -26,6 +26,8 @@ class RegPages extends CI_Controller {
     }
 
     public function userDetails(){
+        $data['userName'] = '';
+        $data['userLevel'] = '';
         $data['activeUser'] = 'active';
         $data['activeHome'] = '';
         $data['activeAboutUs'] = '';
