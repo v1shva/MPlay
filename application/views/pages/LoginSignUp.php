@@ -87,8 +87,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						   <form action="<?php echo site_url('LoginSignUp\login');?>" method="post">
 							   
 						    
-							<input type="text" name="Username" placeholder="Username" required=" ">
-							<input type="password" name="Password" placeholder="Password" required=" ">
+							<input type="text" name="username" placeholder="Username" required=" ">
+							<input type="password" name="password" placeholder="Password" required=" ">
 							<?php 
 							   if($this->session->flashdata('login_error') ){
                                                         		echo "You entered rong data";
