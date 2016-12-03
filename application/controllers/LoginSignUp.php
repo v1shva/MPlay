@@ -5,7 +5,7 @@ class LoginSignUp extends CI_Controller {
     {
         parent::_construct();
         $this->load->library('form_validation');
-        $this->load->model('model_login');
+        $this->load->model('User1_model');
 
     }
 
