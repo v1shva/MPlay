@@ -16,7 +16,7 @@ class UserModel extends CI_model{
     function  check_login($username,$password){
         $epassword=md5($password);
         //echo $epassword;
-       $query_str= "SELECT id FROM  user WHERE  name = '$username' and password = '$epassword'";
+       $query_str= "SELECT id FROM  user WHERE  username = '$username' and password = '$epassword'";
         //$result=$this->db->query($query_str,array($username,$sha1_password));
         $result=$this->db->query($query_str);
         if($result->num_rows()==1){
