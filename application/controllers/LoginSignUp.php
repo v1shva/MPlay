@@ -60,7 +60,7 @@ class LoginSignUp extends CI_Controller {
     
     public function main_page(){
         if($this->session->userdata('logged_in')){
-            redirect(base_url('pages\view'),'refresh');
+            redirect(site_url('pages\view'),'refresh');
         }
         else{
             redirect(site_url('LoginSignUp\view'),'refresh');
