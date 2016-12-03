@@ -107,23 +107,16 @@ class LoginSignUp extends CI_Controller {
                 redirect(site_url('LoginSignUp/main_page'),'refresh');
 
             }
-
-
-
-
         }
-
-
-    }  
+   } 
     
+ 
+    function logout(){
+        $this->session->set_userdata('logged_in',FALSE);
+        $this->session->sess_destroy();
+    }   
     
-    
-    
-    
-    
-}
-
-
+ }
 
 
 ?>
