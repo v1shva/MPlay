@@ -83,19 +83,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 					<div class="form">
 						<h2>Login to your account</h2>
-<<<<<<< Updated upstream
+
 						<!--<form action="LoginSignUp\login_user" method="post">-->
 						   <form action="<?php echo site_url('LoginSignUp\login');?>" method="post">
 							   
 						    
 							<input type="text" name="username" placeholder="Username" required=" ">
 							<input type="password" name="password" placeholder="Password" required=" ">
-							   
-=======
+
 						<form action="LoginSignUp\login_user" method="post">
 							<input type="text" name="email" placeholder="email" required=" ">
 							<input type="password" name="password" placeholder="password" required=" ">
->>>>>>> Stashed changes
+
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
 							<div class="alert alert-warning">
