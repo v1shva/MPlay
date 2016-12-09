@@ -125,6 +125,8 @@ class LoginSignUp extends CI_Controller {
           $this->load->view('templates/footer');
        }
         else{
+            $username=$this->input->post('username');//getting  user name which was passed via post method
+            $password=$this->input->post('password');
             
         }
     
