@@ -78,7 +78,9 @@ class LoginSignUp extends CI_Controller {
             $this->load->view('pages/'.$page);//loding loginSignup page
             $this->load->view('templates/footer');//loading footer
 
-        } else {
+        } 
+      
+      else {
 
             
             $username=$this->input->post('username');//getting  user name which was passed via post method
