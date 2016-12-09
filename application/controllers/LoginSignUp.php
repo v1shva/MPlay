@@ -109,7 +109,26 @@ class LoginSignUp extends CI_Controller {
         $this->session->set_userdata('logged_in',FALSE);//setting logged_in state to false in session variable
         $this->session->sess_destroy();//destroying the session variable
         redirect(site_url('LoginSignUp/view'),'refresh');//redirecting url to login page
-    }   
+    }
+    
+    
+    function signin($page = 'LoginSignUp'){
+        
+      $this->form_validation->set_rules('text', 'Name', 'required|trim|max_length[50]|xss_clean');
+      $this->form_validation->set_rules('date','Dob','callback_checkDateFormat');
+      $this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[50]|xss_clean');//validating the username field of the login form
+      $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[200]|xss_clean');
+      $this->form_validation->set_rules('email', 'Email', 'required|valid_email|is_unique[users.email]');
+      if ($this->form_validation->run() == FALSE) {
+          $this->load->view('templates/header');//loding header
+          $this->load->view('pages/'.$page);//loding loginSignup page
+          $this->load->view('templates/footer');
+       }
+        else{
+            
+        }
+    
+    }
     
  }
 
