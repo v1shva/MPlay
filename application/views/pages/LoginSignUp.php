@@ -117,7 +117,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 				  <div class="form">
 					<h2>Create an account</h2>
-					<form action="" method="post">
+					<form action="<?php echo site_url('LoginSignUp\signin');?>" method="post">
 						<input type="text" id="name" name="Name" placeholder="Name" required=" ">
 						<input type="date" id="Dob" name="Dob" placeholder="Date Of Birth" required=" ">
 						<input type="text" id="Country" name="Country" placeholder="Country" required=" ">
@@ -126,6 +126,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<input type="email" id="Email" name="Email" placeholder="Email Address" required=" ">
 						<input type="password" id="Password" name="Password" placeholder="Password" required=" ">
 						<input id="register" type="submit" value="Register" >
+						<hr style="border-top: 1px solid #8c8b8b;">
+						<div class="alert alert-warning">
+                                                           
+								<?php 
+							   if($this->session->flashdata('login_error') ){
+                                                        		echo "<strong>Warning!</strong> You entered rong data";
+										}
+									echo validation_errors(); 
+							?> 
+				                </div>
 					</form>
 				  </div>
 				</div>
