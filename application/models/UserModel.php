@@ -26,4 +26,28 @@ class UserModel extends CI_model{
                return false;
         }
 }
+     
+    function sign_in($username,$password,$email){
+      $epassword=md5($password);
+      $quer_str1="SELECT id FROM user WHERE password='$epassword'";
+      $quer_str2="SELECT id FROM user WHERE username='$username'";
+      $quer_str3="SELECT id FROM user WHERE username='$email'";   
+      
+      $result1=$this->db->query($quer_str1);
+       $result2=$this->db->query($quer_str2);
+         $result3=$this->db->query($quer_str3);
+         if($result1->num_rows()!=0){
+         return 1;
+         }
+         if($result2->num_rows()!=0){
+         return 2;
+         }
+         if($result3->num_rows()!=0){
+         return 3;
+         }
+         //$query="INSERT INTO user()";
+         
+    } 
+     
+     
 }
