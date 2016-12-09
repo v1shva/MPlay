@@ -45,7 +45,7 @@ class UserModel extends CI_model{
          if($result3->num_rows()!=0){
          return 3;
          }
-         //$query="INSERT INTO user()";
+         return 4;
          
     } 
      
