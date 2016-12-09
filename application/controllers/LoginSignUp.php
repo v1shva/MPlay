@@ -70,41 +70,33 @@ class LoginSignUp extends CI_Controller {
     
   public function login($page = 'LoginSignUp')
     {
-        $this->load->library('session');
-        $this->form_validation->set_rules('username', 'username', 'required|trim|max_length[50]|xss_clean');
-        $this->form_validation->set_rules('password', 'password', 'required|trim|max_length[200]|xss_clean');
-        if ($this->form_validation->run() == FALSE) {
-            $this->load->view('templates/header');
-            $this->load->view('pages/'.$page);
-            $this->load->view('templates/footer');
+        $this->load->library('session');//loding the session library
+        $this->form_validation->set_rules('username', 'username', 'required|trim|max_length[50]|xss_clean');//validating the username field of the login form
+        $this->form_validation->set_rules('password', 'password', 'required|trim|max_length[200]|xss_clean');//validating the password field of the login form
+        if ($this->form_validation->run() == FALSE) {//if validation  failed attempt again
+            $this->load->view('templates/header');//loding header
+            $this->load->view('pages/'.$page);//loding loginSignup page
+            $this->load->view('templates/footer');//loading footer
 
         } else {
 
-            //extract($_POST);
-            //process their input and login the user
-            //$username=$_POST('username');
-            $username=$this->input->post('username');
-            //$password=$_POST('password');
-            $password=$this->input->post('password');
-            // $user_id=$this->user1_model-> check_login($username,$password);
-            //$username=$this->input->post('username');
-
-            $user_id=$this->UserModel->check_login($username,$password);
+            
+            $username=$this->input->post('username');//getting  user name which was passed via post method
+            $password=$this->input->post('password');//getting password which was ""
+            $user_id=$this->UserModel->check_login($username,$password);//calling check_login function of the usermodel weather user exists
             if(! $user_id){
                //login failed
-                $this->session->set_flashdata('login_error',TRUE);
+                $this->session->set_flashdata('login_error',TRUE);//setting login_error state in session varible
 
-                redirect(site_url('LoginSignUp\view'),'refresh');
+                redirect(site_url('LoginSignUp\view'),'refresh');//redirecting to same page
 
             }
             else{
-                //login passed
-                //$CI=&self::get_instance();
-                //echo var_dump($this->CI);
-                $this->session;
-                $login_data=array('logged_in'=> TRUE ,'user_id'=>$user_id);
-                $this->session->set_userdata($login_data);
-                redirect(site_url('LoginSignUp/main_page'),'refresh');
+                
+                $this->session;//using the  session variable
+                $login_data=array('logged_in'=> TRUE ,'user_id'=>$user_id);//setting  login data in  $login_data array
+                $this->session->set_userdata($login_data);//setting  session  user data as by passing $login_array
+                redirect(site_url('LoginSignUp/main_page'),'refresh');//redirecting url to home page
 
             }
         }
@@ -112,9 +104,9 @@ class LoginSignUp extends CI_Controller {
     
  
     function logout(){
-        $this->session->set_userdata('logged_in',FALSE);
-        $this->session->sess_destroy();
-        redirect(site_url('LoginSignUp/view'),'refresh');
+        $this->session->set_userdata('logged_in',FALSE);//setting logged_in state to false in session variable
+        $this->session->sess_destroy();//destroying the session variable
+        redirect(site_url('LoginSignUp/view'),'refresh');//redirecting url to login page
     }   
     
  }
