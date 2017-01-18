@@ -32,18 +32,18 @@
                     <div class="form-group">
                         <label for="pwd">Mood:</label>
                         <div class="container-fluid moods">
-                            <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" >
-                            <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/smile.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/suspicious.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon">
-                            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon">
+                            <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" name="happy">
+                            <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon" name="in-love">
+                            <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon" name="confused">
+                            <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoicon" name="angry">
+                            <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoicon" name="crying">
+                            <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoicon" name="embarrassed">
+                            <img src="<?php echo base_url("media/moods/smile.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="smiling">
+                            <img src="<?php echo base_url("media/moods/suspicious.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="suspicious">
+                            <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="crazy">
+                            <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="naughty">
+                            <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="bored">
+                            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="smart">
                         </div>
                     </div>
                     <div class="form-group songupload">
@@ -68,7 +68,7 @@
                     </div>
 
                     <div class="checkbox">
-                        <label><input type="checkbox"> I agree </label>
+                        <label><input type="checkbox"> I agree to the terms and conditions of the MPlay web app.</label>
                     </div>
                     <button id="submitdata" type="submit" class="btn btn-default fileinput-upload fileinput-upload-button">Submit</button>
 
@@ -83,7 +83,14 @@
 <script type="text/javascript">
 
     // Ajax post/*
-
+    $('.emoicon').click(function(){
+        if(!$(this).hasClass('selected')){
+            $(this).addClass('selected');
+        }
+        else{
+            $(this).removeClass('selected');
+        }
+    });
     $(document).ready(function() {
         $("#submitdata").click(function(event) {
             event.preventDefault();

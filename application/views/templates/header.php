@@ -21,6 +21,7 @@
             <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
             <script src="<?php echo base_url("assets/js/ratings/star-rating.js");?>" type="text/javascript"></script>
 
+
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
         </head>
@@ -55,8 +56,7 @@
                         </form>
                         <ul class="nav navbar-nav navbar-right">
                             <li><a href="<?php echo base_url("index.php/LoginSignUp/view"); ?>"><span class="glyphicon glyphicon-log-in"></span> Login/Sign Up</a></li>
-                            <li><a href="<?php echo base_url("index.php/LoginSignUp/logout"); ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>    
-                        </ul>
+                      </ul>
                          
 
 

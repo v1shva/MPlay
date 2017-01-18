@@ -26,12 +26,13 @@
     width:10%;
     background: #f1c40f;
 }
+
+.selected{
+    width:10%;
+    background: #f1c40f;
+}
 .emobar{
     background: #ECF0F1;
-}
-
-.suggestbox{
-
 }
 
 .addsongform{
@@ -49,7 +50,6 @@
 
 .songupload{
     border-radius: inherit;
-    border: groove whitesmoke;
     padding: 5px;
 }
 

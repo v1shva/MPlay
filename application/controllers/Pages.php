@@ -9,14 +9,14 @@
 class Pages extends CI_Controller {
 
 
-    public function view($page = 'home')
+    function view($page = 'home')
     {
-
         $data['title'] = ucfirst($page); // Capitalize the first letter
         $this->load->view('templates/header', $data);
         $this->load->view('pages/'.$page, $data);
         $this->load->view('pages/emotionbar',$data);
         $this->load->view('pages/suggestions',$data);
+
         $this->load->model('Player');
         $data['playlist']=$this->Player->getPlaylist();
         $this->load->view('pages/player',$data);

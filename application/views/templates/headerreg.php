@@ -17,7 +17,6 @@
                 <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/blue.monday/css/jplayer.blue.monday.min.css"); ?>" />
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
             <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>
-
             <script>
 
 
