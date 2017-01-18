@@ -15,10 +15,10 @@
   <!-- jvectormap -->
   <link rel="stylesheet" href="<?php echo base_url("assets/js/admin/jvectormap/jquery-jvectormap-1.2.2.css")?>">
   <!-- Theme style -->
-  <link rel="stylesheet" href="<?php echo base_url("dist/css/AdminLTE.min.css")?>">
+  <link rel="stylesheet" href="<?php echo base_url("assets/css/AdminLTE.min.css")?>">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?php echo base_url("dist/css/skins/_all-skins.min.css")?>">
+  <link rel="stylesheet" href="<?php echo base_url("assets/css/skins/_all-skins.min.css")?>">
 <!-- jQuery 2.2.3 -->
   <script src="<?php echo base_url("assets/js/admin/jQuery/jquery-2.2.3.min.js")?>"></script>
 	<!-- Bootstrap 3.3.6 -->
@@ -26,7 +26,7 @@
 	<!-- FastClick -->
   <script src="<?php echo base_url("assets/js/admin/fastclick/fastclick.js")?>"></script>
 	<!-- AdminLTE App -->
-  <script src="<?php echo base_url("dist/js/app.min.js")?>"></script>
+  <script src="<?php echo base_url("assets/js/app.min.js")?>"></script>
 	<!-- Sparkline -->
   <script src="<?php echo base_url("assets/js/admin/sparkline/jquery.sparkline.min.js")?>"></script>
 	<!-- jvectormap -->
@@ -37,10 +37,10 @@
 	<!-- ChartJS 1.0.1 -->
   <script src="<?php echo base_url("assets/js/admin/chartjs/Chart.min.js")?>"></script>
 	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-  <script src="<?php echo base_url("dist/js/pages/dashboard2.js")?>"></script>
+  <script src="<?php echo base_url("assets/js/pages/dashboard2.js")?>"></script>
 	<!-- AdminLTE for demo purposes -->
-  <script src="<?php echo base_url("dist/js/demo.js")?>"></script>
-  <script src="<?php echo base_url("dist/js/demo.js")?>"></script>
+  <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
+  <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
