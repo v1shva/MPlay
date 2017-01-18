@@ -5,7 +5,8 @@
  * Date: 11/24/2016
  * Time: 12:18 PM
  */
-class Song extends CI_model{
+class SongModel extends CI_model{
+
     public function addsongdb($details){
         $db=$this->load->database();
         $success = $this->db->insert('Song',$details);
@@ -13,6 +14,7 @@ class Song extends CI_model{
     }
 
     public function getSongs($emotion){
+        $db=$this->load->database();
         $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
         $this->db->where('Emotion',$emotion);
         $this->db->from('song');

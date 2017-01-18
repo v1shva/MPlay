@@ -61,102 +61,43 @@
 		</div>
 </div>
     </div>
-<script type="text/javascript" src="../../dist/jplayer/jquery.jplayer.min.js"></script>
-<script type="text/javascript" src="../../dist/add-on/jplayer.playlist.min.js"></script>
+
 <!--
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
-<script type="text/javascript">
-//<![CDATA[
+<script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
+<script>
 $(document).ready(function(){
-	$("#show").click(function(){
-        $("#playlist").slideToggle();
-});
-	new jPlayerPlaylist({
-		jPlayer: "#jquery_jplayer_1",
-		cssSelectorAncestor: "#jp_container_1"
-	}, [
-		<?php foreach($songs as $song); {?>
-		{
-			title:<?php echo $song->Title; ?>
+	var playlist=[];
+	jQuery.ajax({
+		type: "POST",
+		url: "index.php/Player/load_playlist",
+		dataType: 'json',
+		data: {},
+		complete: function(r){
+			var data = JSON.parse(r.responseText);
+			console.log(data);
+			for (var i in data.songs) {
+				var item = data.songs[i];
+				playlist.push({
+					title : item.Title,
+					mp3 : "<?php echo base_url();?>" + item.path,
+				});
+			}
+			new jPlayerPlaylist({
+				jPlayer: "#jquery_jplayer_1",
+				cssSelectorAncestor: "#jp_container_1"
+			}, playlist , {
+				swfPath: "../../dist/jplayer",
+				supplied: "oga, mp3",
+				wmode: "window",
+				useStateClassSkin: true,
+				autoBlur: false,
+				smoothPlayBar: true,
+				keyEnabled: true
+			});
 		}
-		<?php }?>
-		{
-			title:"Cro Magnon Man",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg"
-		},
-		{
-			title:"Your Face",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-05-Your_face.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-05-Your_face.ogg"
-		},
-		{
-			title:"Cyber Sonnet",
-			mp3:"http://www.jplayer.org/audio/mp3/TSP-07-Cybersonnet.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/TSP-07-Cybersonnet.ogg"
-		},
-		{
-			title:"Tempered Song",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-01-Tempered-song.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-01-Tempered-song.ogg"
-		},
-		{
-			title:"Hidden",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-02-Hidden.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-02-Hidden.ogg"
-		},
-		{
-			title:"Lentement",
-			free:true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-03-Lentement.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-03-Lentement.ogg"
-		},
-		{
-			title:"Lismore",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-04-Lismore.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-04-Lismore.ogg"
-		},
-		{
-			title:"The Separation",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-05-The-separation.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-05-The-separation.ogg"
-		},
-		{
-			title:"Beside Me",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-06-Beside-me.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-06-Beside-me.ogg"
-		},
-		{
-			title:"Bubble",
-			free:true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-07-Bubble.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
-		},
-		{
-			title:"Stirring of a Fool",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-08-Stirring-of-a-fool.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-08-Stirring-of-a-fool.ogg"
-		},
-		{
-			title:"Partir",
-			free: true,
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-09-Partir.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-09-Partir.ogg"
-		},
-		{
-			title:"Thin Ice",
-			mp3:"http://www.jplayer.org/audio/mp3/Miaow-10-Thin-ice.mp3",
-			oga:"http://www.jplayer.org/audio/ogg/Miaow-10-Thin-ice.ogg"
-		}
-	], {
-		swfPath: "../../dist/jplayer",
-		supplied: "oga, mp3",
-		wmode: "window",
-		useStateClassSkin: true,
-		autoBlur: false,
-		smoothPlayBar: true,
-		keyEnabled: true
 	});
+
 });
-//]]>
 </script>

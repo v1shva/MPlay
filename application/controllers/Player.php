@@ -9,20 +9,17 @@
 class Player extends CI_Controller
 {
 
-    public function view($page = 'home')
+    public function index()
     {
-        $data['activeHome'] = 'active';
-        $data['activeAboutUs'] = '';
-        $data['activeUser'] = '';
-        $data['title'] = ucfirst($page); // Capitalize the first letter
-        $this->load->view('templates/headerreg', $data);
-        $this->load->view('pages/' . $page, $data);
-        $this->load->view('pages/emotionbar', $data);
-        $this->load->view('pages/suggestions', $data);
-        $this->load->helper(array('form', 'url', 'html'));
-        $this->load->library('form_validation');
-        $this->load->view('pages/addsong', $data);
-        //$this->load->view('pages/player',$data);
-        $this->load->view('templates/footerreg', $data);
+        $this->load->view('templates/header');
+        $this->load->view('pages/player');
+        $this->load->view('templates/footer');
     }
+
+    public function load_playlist($emotion="joyful"){
+        $this->load->model('SongModel');
+        $this->data['songs']=$this->SongModel->getSongs($emotion);
+        echo json_encode($this->data);
+    }
+
 }

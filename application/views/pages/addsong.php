@@ -32,12 +32,6 @@
                     <div class="form-group">
                         <label for="pwd">Mood:</label>
                         <div class="container-fluid moods">
-                            <select class="image-picker show-html" data-limit="2" multiple="multiple">
-                                <option data-img-src="http://placekitten.com/220/200" value="1">Cute Kitten 1</option>
-                                <option data-img-src="http://placekitten.com/180/200" value="2">Cute Kitten 2</option>
-                                <option data-img-src="http://placekitten.com/130/200" value="3">Cute Kitten 3</option>
-                                <option data-img-src="http://placekitten.com/270/200" value="4">Cute Kitten 4</option>
-                            </select>
                             <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" >
                             <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon">
                             <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon">
