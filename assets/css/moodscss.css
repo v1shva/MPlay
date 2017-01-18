@@ -21,14 +21,28 @@
     width:8%;
     transition: all 0.5s;
     float:left;
+    cursor: pointer;
 }
 .emoicon:hover{
-    width:10%;
+    width:8.7%;
     background: #f1c40f;
+    cursor: pointer;
+}
+
+.emoiconInput{
+    width:8%;
+    transition: all 0.5s;
+    float:left;
+    cursor: pointer;
+}
+.emoiconInput:hover{
+    width:8.7%;
+    background: #f1c40f;
+    cursor: pointer;
 }
 
 .selected{
-    width:10%;
+    width:9%;
     background: #f1c40f;
 }
 .emobar{

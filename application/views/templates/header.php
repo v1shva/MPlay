@@ -12,6 +12,7 @@
             <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
                 <title>mPlay</title>
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+                <link rel="stylesheet" href="<?php echo base_url("assets/css/backgroundAnim.css"); ?>" />
                 <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>

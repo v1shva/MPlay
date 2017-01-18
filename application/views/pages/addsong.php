@@ -32,18 +32,18 @@
                     <div class="form-group">
                         <label for="pwd">Mood:</label>
                         <div class="container-fluid moods">
-                            <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon" name="happy">
-                            <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoicon" name="in-love">
-                            <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoicon" name="confused">
-                            <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoicon" name="angry">
-                            <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoicon" name="crying">
-                            <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoicon" name="embarrassed">
-                            <img src="<?php echo base_url("media/moods/smile.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="smiling">
-                            <img src="<?php echo base_url("media/moods/suspicious.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="suspicious">
-                            <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="crazy">
-                            <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="naughty">
-                            <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="bored">
-                            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon" name="smart">
+                            <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoiconInput" name="happy">
+                            <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoiconInput" name="in-love">
+                            <img src="<?php echo base_url("media/moods/confused.png"); ?>" border="0" class="img-circle emoiconInput" name="confused">
+                            <img src="<?php echo base_url("media/moods/angry.png"); ?>" border="0" class="img-circle emoiconInput" name="angry">
+                            <img src="<?php echo base_url("media/moods/crying.png"); ?>" border="0" class="img-circle emoiconInput" name="crying">
+                            <img src="<?php echo base_url("media/moods/embarrassed.png"); ?>"border="0" class="img-circle emoiconInput" name="embarrassed">
+                            <img src="<?php echo base_url("media/moods/smile.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="smiling">
+                            <img src="<?php echo base_url("media/moods/suspicious.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="suspicious">
+                            <img src="<?php echo base_url("media/moods/tongue-out-1.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="crazy">
+                            <img src="<?php echo base_url("media/moods/wink.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="naughty">
+                            <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="bored">
+                            <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoiconInput" name="smart">
                         </div>
                     </div>
                     <div class="form-group songupload">
@@ -80,17 +80,8 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="<?php echo base_url("assets/js/emotionsInput.js"); ?>"></script>
 <script type="text/javascript">
-
-    // Ajax post/*
-    $('.emoicon').click(function(){
-        if(!$(this).hasClass('selected')){
-            $(this).addClass('selected');
-        }
-        else{
-            $(this).removeClass('selected');
-        }
-    });
     $(document).ready(function() {
         $("#submitdata").click(function(event) {
             event.preventDefault();
@@ -101,7 +92,7 @@
                 type: "POST",
                 url: "<?php echo base_url(); ?>" + "index.php/Song/addsong",
                 dataType: 'json',
-                data: {title: title, artist: artist,url:url},
+                data: {title: title, artist: artist,url:url,emotions:selectedEmotionsInput},
                 complete: function(r){
                     if (r.responseText == 'true'){
                         $("#addsongContent").html("" +

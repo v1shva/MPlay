@@ -1,0 +1,15 @@
+@-webkit-keyframes slide {
+    from{
+        background-position:575px;
+    }
+    to{
+        background-position:1725px;
+    }
+}
+
+#logo{
+    width:575px;
+    height:200px;
+    background:url(http://f.cl.ly/items/0g3q1A203t2A2m182i1k/newbg.png);
+    -webkit-animation: slide 10s linear infinite;
+}

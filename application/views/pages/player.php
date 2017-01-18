@@ -68,12 +68,11 @@
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
 <script>
 $(document).ready(function(){
-	var playlist=[];
 	jQuery.ajax({
 		type: "POST",
 		url: "index.php/Player/load_playlist",
 		dataType: 'json',
-		data: {},
+		data: {emotins:selectedEmotions},
 		complete: function(r){
 			var data = JSON.parse(r.responseText);
 			console.log(data);
@@ -89,7 +88,7 @@ $(document).ready(function(){
 				cssSelectorAncestor: "#jp_container_1"
 			}, playlist , {
 				swfPath: "../../dist/jplayer",
-				supplied: "oga, mp3",
+				supplied: "mp3",
 				wmode: "window",
 				useStateClassSkin: true,
 				autoBlur: false,

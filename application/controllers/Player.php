@@ -16,7 +16,8 @@ class Player extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function load_playlist($emotion="joyful"){
+    public function load_playlist(){
+        $emotion = $this->input->post('emotions');
         $this->load->model('SongModel');
         $this->data['songs']=$this->SongModel->getSongs($emotion);
         echo json_encode($this->data);

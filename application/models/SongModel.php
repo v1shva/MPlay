@@ -15,8 +15,14 @@ class SongModel extends CI_model{
 
     public function getSongs($emotion){
         $db=$this->load->database();
+
         $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
-        $this->db->where('Emotion',$emotion);
+        if(is_array($emotion)){
+            $this->db->where_in('Emotion',$emotion);
+        }
+        else{
+            $this->db->where('Emotion',$emotion);
+        }
         $this->db->from('song');
         $query = $this->db->get();
         return $query->result();

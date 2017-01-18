@@ -11,19 +11,22 @@ class Song extends CI_Controller {
     {
         parent::__construct();
         $this->load->database();
-        $this->load->model('song_model');
+        $this->load->model('SongModel');
     }
 
     public function addsong()
     {
         $this->load->helper(array('form', 'url', 'html'));
+        $emotions = $this->input->post('emotions');
+        $emotions = implode(", ",$emotions);
         $data = array(
             'Title' => $this->input->post('title'),
             'Artist' => $this->input->post('artist'),
             'path' => $this->input->post('url'),
+            'Emotions' => $emotions
         );
-        $this->load->model('Song');
-        if($this->AddSong->addsongdb($data)){
+        $this->load->model('SongModel');
+        if($this->SongModel->addsongdb($data)){
             echo 'true';
         }
         else{
