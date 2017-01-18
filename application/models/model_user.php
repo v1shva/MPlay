@@ -4,10 +4,10 @@ class Model_user extends CI_Model {
     public function insert_user(){
         $name = $this->input->post('name');
         $country = $this->input->post('country');
-        $dob = $this->input->('dob');
-        $mlang = $this->input->('mlang');
-        $email = $this->input->('email');
-        $password = $this->input->('password');
+        $dob = $this->input->post('dob');
+        $mlang = $this->input->post('mlang');
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
 
         $sql = "INSERT INTO user (email,password,name,birthday,country,mlang,)
         VALUES(" . $email . ",
@@ -47,7 +47,7 @@ class Model_user extends CI_Model {
         );
         $this->email_code = md5((string)$row->reg_time);
         $this->session->set_userdata($sess_data);
-        )
+
 
     }
 }

@@ -22,7 +22,7 @@ class Song extends CI_Controller {
             'Artist' => $this->input->post('artist'),
             'path' => $this->input->post('url'),
         );
-        $this->load->model('AddSong');
+        $this->load->model('Song');
         if($this->AddSong->addsongdb($data)){
             echo 'true';
         }
@@ -52,10 +52,5 @@ class Song extends CI_Controller {
 
 
     }
-    public  function load_playlist($emotion){
-        $this->data['songs']= $this->song_model->getSongs($emotion);
-        $this->load->view('pages/playlist',$this->data);
-        $this->load->view('templates/header');
-        $this->load->view('templates/footer');
-    }
+
 }

@@ -8,7 +8,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 class RegPages extends CI_Controller {
 
-    public function Home($page = 'home')
+    public function view($page = 'home')
     {
         $data['activeHome'] = 'active';
         $data['activeAboutUs'] = '';
