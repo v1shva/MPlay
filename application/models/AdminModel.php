@@ -71,5 +71,20 @@ class AdminModel extends CI_Model {
         return $num_rows;
 
     }
+     public function songsManthly(){
+        $sql = "SELECT Emotion, COUNT(Emotion) AS cunt FROM song WHERE dateAdded BETWEEN (now() - INTERVAL 1 MONTH) AND now() GROUP BY Emotion;";
+        $query=$this->db->query($sql);
+        $res = $query->result();
+        return $res;
+       
+         }
+    public function numrow(){
+        $sql = "SELECT * FROM song";
+        $query=$this->db->query($sql);
+        $res = $query->result();
+        $row=$query->num_rows();
+        return $row;
+        
+    }     
 
 }

@@ -496,46 +496,177 @@
                 <!-- /.col -->
                 <div class="col-md-4">
                   <p class="text-center">
-                    <strong>Newly added Music Emotion Based</strong>
+                    <strong>Manthly added songs emotion based</strong>
                   </p>
-
-                  <div class="progress-group">
-                    <span class="progress-text">Add Products to Cart</span>
-                    <span class="progress-number"><b>160</b>/200</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                    </div>
-                  </div>
+                  <?php foreach($emo as $emo1){
+                   if($emo1->Emotion=='angry'){?>
                   <!-- /.progress-group -->
                   <div class="progress-group">
-                    <span class="progress-text">Complete Purchase</span>
-                    <span class="progress-number"><b>310</b>/400</span>
+                    <span class="progress-text">angry</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
 
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-red" style="width: 80%"></div>
+                    <div class="progress-bar progress-bar-red" style="width:<?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
                     </div>
                   </div>
+                   <?php  break;} }?> 
+                  <?php foreach($emo as $emo1){
+                    if($emo1->Emotion=='bored'){?>
                   <!-- /.progress-group -->
                   <div class="progress-group">
-                    <span class="progress-text">Visit Premium Page</span>
-                    <span class="progress-number"><b>480</b>/800</span>
+                    <span class="progress-text">bored</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
 
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-green" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
                     </div>
                   </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='confused'){?>
                   <!-- /.progress-group -->
                   <div class="progress-group">
-                    <span class="progress-text">Send Inquiries</span>
-                    <span class="progress-number"><b>250</b>/500</span>
+                    <span class="progress-text">confused</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
 
                     <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
+                      <div class="progress-bar progress-bar-yellow" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
                     </div>
                   </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='crazy'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">crazy</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar progress-bar-aqua" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='crying'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">crying</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#9b59b6; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='embarrassed'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">embarrassed</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#e67e22;width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='happy'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">happy</span>
+                    <span class="progress-number"><b><?php if($emo1->Emotion='happy') echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#f39c12; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?>  
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='in-love'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">in-love</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#95a5a6; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?>  
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='naughty'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">naughty</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style="background-color:#f1c40f; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?> 
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='revengeful'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">revengeful</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style=" background-color:#1abc9c; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?>  
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='smiling'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">smiling</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style=" background-color:#2c3e50; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;} }?>  
+
+                     <?php foreach($emo as $emo1){
+                      if($emo1->Emotion=='suspicious'){?>
+
+                   <div class="progress-group">
+                    <span class="progress-text">suspicious</span>
+                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
+
+                    <div class="progress sm">
+                      <div class="progress-bar" style=" background-color:#7f8c8d;width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
+                    </div>
+                  </div>
+
+                  <?php break;}  }?>  
+
                   <!-- /.progress-group -->
                 </div>
+               
                 <!-- /.col -->
               </div>
               <!-- /.row -->
