@@ -54,6 +54,7 @@ class AdminCtrl extends CI_Controller {
     	$data['profiledata'] = $this->AdminModel->profile($username,$id);
       $data['emo'] = $this->AdminModel->songsManthly();
       $data['num'] = $this->AdminModel->numrow();
+      $data['numOfLikes'] = $this->AdminModel->ratedUsers();
     	$this->load->view('pages/admin_dashboard', $data);
 
     }

@@ -85,6 +85,16 @@ class AdminModel extends CI_Model {
         $row=$query->num_rows();
         return $row;
         
+    }
+    public function ratedUsers(){
+        $sql = "SELECT RatedUsers FROM rankglobal";
+        $query=$this->db->query($sql);
+      //  $res = $query->result();
+        $value=0;
+        foreach($query->result_array() as $row){
+            $value=$value + $row['RatedUsers'];
+        }
+         return $value;
     }     
 
 }

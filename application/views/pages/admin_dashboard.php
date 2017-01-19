@@ -415,8 +415,8 @@
             <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Likes</span>
-              <span class="info-box-number">41,410</span>
+              <span class="info-box-text">Rated Users</span>
+              <span class="info-box-number"><?php echo $numOfLikes;?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -445,7 +445,7 @@
             <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">New Members</span>
+              <span class="info-box-text">Members</span>
               <span class="info-box-number"> <?php echo $count ?> </span>
             </div>
             <!-- /.info-box-content -->
