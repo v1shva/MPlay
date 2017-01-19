@@ -30,4 +30,14 @@ class SongModel extends CI_model{
         $query = $this->db->get();
         return $query->result();
     }
+
+
+    public function searcSong($title){
+        $db=$this->load->database();
+        $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
+        $this->db->from('song');
+        $query = $this->db->get_where('song', array('Title' => $title),10,5);
+        return $query->result();
+
+    }
 }

@@ -71,11 +71,20 @@ class AdminCtrl extends CI_Controller {
    	$this->load->view('pages/reports', $data);
    }
 
-   public function forms(){
+   public function addforms(){
     $this->load->view('templates/session'); 
-   	$this->load->view('templates/forms');
+   	$this->load->view('templates/Addforms');
    }
 
+   public function deleteform(){
+    $this->load->view('templates/session'); 
+   	$this->load->view('templates/Deleteforms');
+   }
+
+   public function modifyforms(){
+    $this->load->view('templates/session'); 
+   	$this->load->view('templates/Modifyforms');
+   }
 
        public function uploadSong()
     {
@@ -93,6 +102,34 @@ class AdminCtrl extends CI_Controller {
         $data = '{}';
         header('Content-Type: application/json');
         echo json_encode($data);
+
+
+    }
+
+
+
+    public function addsong()
+    {
+        $this->load->helper(array('form', 'url', 'html'));
+        $url = $this->input->post('url');
+        $filename = $this->input->post('filename');
+        $path = "";
+        if($filename){
+            $path = "media/songs/" . $filename;
+        }
+        $data = array(
+            'Title' => $this->input->post('title'),
+            'Artist' => $this->input->post('artist'),
+            'path' => $path,
+            'Emotion' => $this->input->post('emotion')
+        );
+        $this->load->model('SongModel');
+        if($this->SongModel->addsongdb($data)){
+            echo 'true';
+        }
+        else{
+            echo 'false';
+        }
 
 
     }

@@ -356,9 +356,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="forms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
+            <li><a href="addforms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
+            <li><a href="modifyforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
+            <li><a href="deleteform"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
           </ul>
         </li>
         <li>
@@ -379,7 +379,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Add Song
+        Delete Song
         <small>Form</small>
       </h1>
       <ol class="breadcrumb">
@@ -395,9 +395,9 @@
         <!-- left column -->
         <div class="col-md-6">
           <!-- general form elements -->
-          <div class="box box-danger">
+          <div class="box box-primary">
             <div class="box-header with-border">
-              <h3 class="box-title">Add Song</h3>
+              <h3 class="box-title">Delete Song</h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
