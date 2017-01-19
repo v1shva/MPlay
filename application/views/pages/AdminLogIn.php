@@ -19,18 +19,21 @@
             <div class="module form-module">
                 <div class="toggle"><i class="fa fa-times fa-pencil"></i>
                 </div>
-
+               
                 <div class="form">
+                  
+
                     <h2>AdminLogIn</h2>
+                    <script src="<?php echo base_url("assets/js/admin/validate/validate.js"); ?>"></script>
+                    <form  name="AdminLogIn" onSubmit="return validateLoginForm();" action="<?php echo base_url('index.php/AdminCtrl/login');?>" method="post">
 
-                    <form action="<?php echo base_url('index.php/AdminCtrl/login');?>" method="post">
 
-
-                        <input type="text" name="username" placeholder="Username" required=" ">
-                        <input type="password" name="password" placeholder="Password" required=" ">
+                        <input type="text" name="username" placeholder="E-mail"  id="email" required="required" onblur='validateEmail()'>
+                        <input type="password" name="password" placeholder="Password"  id="password" required="required" onblur='validatePassword()'>
 
 
                         <input type="submit" value="Login">
+
                      
 
                     </form>
