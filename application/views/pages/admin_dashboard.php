@@ -1,3 +1,21 @@
+<?php
+$loggedin = $this->session->userdata('loggedin');
+
+if ($loggedin != true) {
+  
+  $dd = base_url('index.php/AdminCtr/view');
+  redirect($dd);
+  exit();
+}
+
+
+$name = $this->session->userdata('username');
+
+/*;*/
+
+
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -295,7 +313,7 @@
                   <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                  <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                  <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
               </li>
             </ul>

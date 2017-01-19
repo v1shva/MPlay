@@ -12,7 +12,7 @@ class AdminCtrl extends CI_Controller {
         parent::__construct();
         $this->load->library('session');
       //  $this->load->library('form_validation');
-       // $this->load->model('UserModel');
+        $this->load->model('AdminModel');
         $this->load->database();
 
     }
@@ -26,18 +26,21 @@ class AdminCtrl extends CI_Controller {
 
     }
     public function login(){
-    	$username=$this->input->post('username');
-        $password=$this->input->post('password');
-        $this->load->model('AdminModel');
-        $data=$this->AdminModel->signin($username,$password);
+        $data=$this->AdminModel->signin();
        if($data){
             $this->load->view('pages/admin_dashboard');
 
         }else{
 
-            $this->load->view('pages/AdminLogIn');
+            $this->view();
             
         }
     }
+    function logout(){
+
+		$this->AdminModel->logout();
+		$this->view();
+
+	}
    
 }
