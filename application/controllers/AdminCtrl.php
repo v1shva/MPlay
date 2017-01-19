@@ -48,9 +48,20 @@ class AdminCtrl extends CI_Controller {
 
     public function home(){
     	$this->load->model('UserModel');
+    	$username=$this->session->userdata('username'); 
+    	$id=$this->session->userdata('id'); 
     	$data['count'] = $this->UserModel->getusercount();
+    	$data['profiledata'] = $this->AdminModel->profile($username,$id);
     	$this->load->view('pages/admin_dashboard', $data);
     }
+    //   function profile(){ 
+ 	 	  
+  		 
+  		// $this->load->view('pages/AdminProfile',$this->data); 
+
+ // } 
+    
+
 
    public function report(){
     $this->load->view('templates/session');   	

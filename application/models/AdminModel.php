@@ -53,9 +53,18 @@ class AdminModel extends CI_Model {
 
         $this->session->sess_destroy();
     }
-   
+    public function profile($username,$id){
+        
+        $sql = "SELECT * FROM admin WHERE email ='$username' AND id = '$id'";
+        $query=$this->db->query($sql);
+        $res = $query->result();
+        return $res;
 
-       public function reportRequests(){
+    }
+
+
+
+    public function reportRequests(){
         $this->db->from('report_requests');
         $query = $this->db->get();
         $num_rows = $query->num_rows();
