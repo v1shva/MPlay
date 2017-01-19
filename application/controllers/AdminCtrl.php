@@ -52,7 +52,10 @@ class AdminCtrl extends CI_Controller {
     	$id=$this->session->userdata('id'); 
     	$data['count'] = $this->UserModel->getusercount();
     	$data['profiledata'] = $this->AdminModel->profile($username,$id);
+      $data['emo'] = $this->AdminModel->songsManthly();
+      $data['num'] = $this->AdminModel->numrow();
     	$this->load->view('pages/admin_dashboard', $data);
+
     }
     //   function profile(){ 
  	 	  
@@ -70,5 +73,7 @@ class AdminCtrl extends CI_Controller {
     $data['profiledata'] = $this->AdminModel->profile($username,$id);  	
    	$this->load->view('pages/reports', $data);
    }
+
+  
 
 }
