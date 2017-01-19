@@ -71,4 +71,30 @@ class AdminCtrl extends CI_Controller {
    	$this->load->view('pages/reports', $data);
    }
 
+   public function forms(){
+    $this->load->view('templates/session'); 
+   	$this->load->view('templates/forms');
+   }
+
+
+       public function uploadSong()
+    {
+        $this->load->helper(array('form', 'url', 'html'));
+
+        $config['upload_path']          = 'media/songs/';
+        $config['max_size']  = 10000;
+        $config['allowed_types']        = 'mp3|wma';
+
+        $this->load->library('upload', $config);
+        if(!$this->upload->do_upload('fileup')){
+            $error = array('error' => $this->upload->display_errors());
+            print_r($error);
+        }
+        $data = '{}';
+        header('Content-Type: application/json');
+        echo json_encode($data);
+
+
+    }
+
 }
