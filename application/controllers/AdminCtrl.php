@@ -28,6 +28,7 @@ class AdminCtrl extends CI_Controller {
     public function login(){
         $data=$this->AdminModel->signin();
        if($data){
+       	    $this->load->view('templates/session');
             $this->load->view('pages/admin_dashboard');
 
         }else{
@@ -36,6 +37,7 @@ class AdminCtrl extends CI_Controller {
             
         }
     }
+
     function logout(){
 
 		$this->AdminModel->logout();
@@ -43,4 +45,17 @@ class AdminCtrl extends CI_Controller {
 
 	}
    
+
+    public function index(){
+    	 $this->load->model('UserModel');
+    	$data['count'] = $this->UserModel->getusercount();
+    	$this->load->view('pages/admin_dashboard', $data);
+    }
+
+
+   public function report(){
+    $this->load->view('templates/session');   	
+   	$this->load->view('pages/reports');
+   }
+
 }

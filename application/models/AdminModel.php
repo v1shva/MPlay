@@ -54,4 +54,14 @@ class AdminModel extends CI_Model {
         $this->session->sess_destroy();
     }
 
+
+
+    public function reportRequests(){
+        $this->db->from('report_requests');
+        $query = $this->db->get();
+        $num_rows = $query->num_rows();
+        return $num_rows;
+
+    }
+
 }
