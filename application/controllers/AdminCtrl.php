@@ -18,7 +18,7 @@ class AdminCtrl extends CI_Controller {
     }
 
 
-    public function view($page = 'AdminLogIn')
+    public function index($page = 'AdminLogIn')
     {
         $data['title'] = ucfirst($page); // Capitalize the first letter
         $this->load->view('pages/'.$page, $data);
@@ -29,11 +29,11 @@ class AdminCtrl extends CI_Controller {
         $data=$this->AdminModel->signin();
        if($data){
        	    $this->load->view('templates/session');
-            $this->load->view('pages/admin_dashboard');
+            $this->home();
 
         }else{
 
-            $this->view();
+            $this->index();
             
         }
     }
@@ -41,7 +41,7 @@ class AdminCtrl extends CI_Controller {
     function logout(){
 
 		$this->AdminModel->logout();
-		$this->view();
+		$this->index();
 
 	}
 	function profile(){
@@ -52,7 +52,7 @@ class AdminCtrl extends CI_Controller {
 	}
    
 
-    public function index(){
+    public function home(){
     	 $this->load->model('UserModel');
     	$data['count'] = $this->UserModel->getusercount();
     	$this->load->view('pages/admin_dashboard', $data);
