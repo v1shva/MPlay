@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <div class="form-group ui-widget">
-                        <label for="pwd">Artist:</label>
+                        <label>Artist:</label>
                         <input onfocusout="validateArtist(this);validateArtistAndTitle(this)" type="text" class="form-control" id="artist" title="tooltip">
                     </div>
                     <div class="form-group ui-widget">
@@ -72,7 +72,9 @@
                             </div>
                         </div>
                     </div>
-
+                    <div id="uploadErrorMsg" style="display: none" class="form-group ui-widget">
+                        <label ></label>
+                   </div>
                     <div class="checkbox">
                         <label><input type="checkbox" onchange="agree(this)"> I agree to the terms and conditions of the MPlay web app.</label>
                     </div>
@@ -93,6 +95,7 @@
     var moodValid = false;
     var songValid = false;
     var agreeValid = false;
+    var uploadValid = false;
     function isText(str) {
         return /^[a-zA-Z()]+$/.test(str);
     }
@@ -214,8 +217,14 @@
     }
 
     function validateUpload(){
-        console.log($('.file-preview-frame.file-preview-error').html());
-        console.log($('.file-preview-frame.file-preview-success').html());
+        var uploadError = $('.file-preview-frame.file-preview-error').html();
+        var uploadSuccess = $('.file-preview-frame.file-preview-success').html();
+        if(!(typeof uploadSuccess === 'undefined'){
+            uploadValid = true;
+        }
+        else if(!(typeof uploadError === 'undefined'){
+            uploadValid = false;
+        }
     }
 
 
