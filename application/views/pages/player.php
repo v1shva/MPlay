@@ -27,8 +27,8 @@
                 </div>
             </div>
             
-            <button id="show"> 
-            <i class="glyphicon glyphicon-list">
+            <button id="show" style="color:#95a5a6">
+            <i class="glyphicon glyphicon-list" >
             </i>
             </button> 
 
@@ -54,7 +54,7 @@
             To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
         </div>
     </div>
-    <div class="jp-playlist">
+    <div class="jp-playlist" id="playlist">
         <ul>
             <li>&nbsp;</li>
         </ul>
@@ -62,13 +62,16 @@
 </div>
     </div>
 
-<!--
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
 <script>
     var songs;
 $(document).ready(function(){
+    $("#show").click(function(){
+        $("#playlist").slideToggle();
+    });
 	jQuery.ajax({
 		type: "POST",
 		url: "index.php/Player/load_playlist",
