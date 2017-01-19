@@ -9,7 +9,7 @@
 
 
 <div class="jumbotron emobar">
-    <div class="container">
+    <div class="container" style="text-align: center">
         <h1>Let us find your Music.</h1>
             <div class="container-fluid moods">
                 <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoicon songSelect selected" name="happy">
@@ -25,16 +25,13 @@
                 <img src="<?php echo base_url("media/moods/bored.png"); ?>" width="8%"border="0" class="img-circle emoicon songSelect" name="bored">
                 <img src="<?php echo base_url("media/moods/smart.png"); ?>" width="8%"border="0" class="img-circle emoicon songSelect" name="revengeful">
             </div>
-
-
         <br>
         <p>Emotion based community music app. Let's share our love for music</p>
         <a href="#">Learn More</a>
 
-
     </div>
 </div>
 <script>
-    var selectedEmotions = ["happy"];
+    var selectedEmotion = "sad";
     var playlist=[];
 </script>

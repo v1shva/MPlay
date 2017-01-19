@@ -10,6 +10,24 @@
 <script>
     $("#fileup").fileinput({'showUpload':true, 'previewFileType':'any'});
 </script>
+<!-- resources required for validation and verification process -->
+
+
+<style>
+    .errorMsg  {
+        display:none;
+        background: red;
+        font-size:12px;
+        width: auto;
+        color: #000000;
+        z-index: 111198;
+        border: 2px solid white;
+        top:-6px;
+        /* for IE */
+        /* CSS3 standard */
+    }
+    .ui-autocomplete {z-index:111199 !important;}
+</style>
 <div class="modal fade" id="addsong" role="dialog">
     <div class="modal-dialog">
 
@@ -21,9 +39,15 @@
             </div>
             <div class="modal-body">
                 <?php echo form_open_multipart('Song/addsong'); ?>
-                    <div class="form-group">
+                    <div class="form-group ui-widget">
                         <label>Song Title:</label>
-                        <input type="text" class="form-control" id="title">
+                        <input onfocusout="validateTitle(this)" type="text" class="form-control" id="title" title="tooltip" >
+                        <div class="cssload-thecube">
+                            <div class="cssload-cube cssload-c1"></div>
+                            <div class="cssload-cube cssload-c2"></div>
+                            <div class="cssload-cube cssload-c4"></div>
+                            <div class="cssload-cube cssload-c3"></div>
+                        </div>
                     </div>
                     <div class="form-group">
                         <label for="pwd">Artist:</label>
@@ -48,19 +72,19 @@
                     </div>
                     <div class="form-group songupload">
                         <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active"><a href="#url" aria-controls="home" role="tab" data-toggle="tab">Upload File</a></li>
-                            <li role="presentation"><a href="#upfile" aria-controls="profile" role="tab" data-toggle="tab">URL</a></li>
+                            <li role="presentation" class="active"><a onclick="selectOption('file')" href="#fileUptab" aria-controls="home" role="tab" data-toggle="tab">Upload File</a></li>
+                            <li role="presentation"><a onclick="selectOption('url')" href="#urlTab" aria-controls="profile" role="tab" data-toggle="tab">URL</a></li>
                         </ul>
                         <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="url">
+                            <div role="tabpanel" class="tab-pane songdata active" id="fileUptab" value="file" >
                                 <div class="form-group" >
                                     <div class="form-group">
-                                        <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/Song/uploadSong'; ?>">
+                                        <input id="fileupName" id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/Song/uploadSong'; ?>">
                                     </div>
 
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="upfile">
+                            <div role="tabpanel" class="tab-pane songdata"  id="urlTab" value="url">
                                 <label for="pwd">URL:</label>
                                 <input type="text" class="form-control"  id="url" >
                             </div>
@@ -82,17 +106,93 @@
 </div>
 <script type="text/javascript" src="<?php echo base_url("assets/js/emotionsInput.js"); ?>"></script>
 <script type="text/javascript">
+    // validation and verification process
+    var titleValid = false;
+    var artistValid = false;
+    var moodValid = false;
+    var songValid = false;
+    function isText(str) {
+        return /^[a-zA-Z()]+$/.test(str);
+    }
+
+
+
+    function retrieveSongTitles(title){
+        var titles = [];
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/Song/getAllSongs",
+            dataType: 'json',
+            data: {},
+            complete: function(r){
+                var data = JSON.parse(r.responseText);
+                var songs = data.Allsongs;
+                console.log(data.Allsongs);
+                var i;
+                for(i=0;i<songs.length;i++){
+                    titles.push(songs[i].Title);
+                }
+                $(title).customcomplete({
+                    source: titles
+                });
+                if(titles.indexOf(title.value)!=-1){
+                    $(title).tooltip({
+                        content: "This song already contains in the database.",
+                        tooltipClass: "errorMsg"
+                    });
+                    title.style.background = "#e74c3c";
+                }
+                else{
+                    title.style.background = "#2ECC71";
+                }
+            }
+        });
+    }
+
+    function  validateTitle(title) {
+        if(!isText(title.value)){
+            $(title).tooltip({
+                content: "Invalid Title",
+                tooltipClass: "errorMsg"
+            });
+            title.style.background = "#e74c3c";
+        }
+        else{
+            retrieveSongTitles(title);
+        }
+    }
+
+    function verifyTitle(title){
+        $(title).autocomplete({
+
+        });
+    }
+    //song upload process
+    var selectedTab = "file";
+    function selectOption(value) {
+        selectedTab = value;
+    }
     $(document).ready(function() {
         $("#submitdata").click(function(event) {
             event.preventDefault();
             var title = $("input#title").val();
             var artist = $("input#artist").val();
             var url = $("input#url").val();
+            var filename = $("#fileupName").val();
+            filename = filename.split("\\");
+            filename = filename[filename.length-1];
+            console.log(filename);
+            if(selectedTab=="file"){
+                url = "";
+            }
+            else{
+                filename = "";
+            }
             jQuery.ajax({
                 type: "POST",
                 url: "<?php echo base_url(); ?>" + "index.php/Song/addsong",
                 dataType: 'json',
-                data: {title: title, artist: artist,url:url,emotions:selectedEmotionsInput},
+                data: {title: title, artist: artist,url:url,filename:filename,emotion:selectedEmotionInput},
                 complete: function(r){
                     if (r.responseText == 'true'){
                         $("#addsongContent").html("" +
