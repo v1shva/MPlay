@@ -23,7 +23,7 @@ class SongModel extends CI_model{
         return $query->result();
     }
 
-    public function getAllSongs(){
+    public function getAllSongDetails(){
         $db=$this->load->database();
         $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
         $this->db->from('song');

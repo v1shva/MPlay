@@ -28,13 +28,5 @@ $('.emoicon').click(function(){
         }
     });
 });
-var selectedEmotionInput = "";
-$('.emoiconInput').click(function(){
-    selectedEmotionInput = this.getAttribute('name');
-    $('.emoiconInput').each(function(i, obj) {
-        $(obj).removeClass('selected');
-    });
-    $(this).addClass('selected');
 
-});
 
