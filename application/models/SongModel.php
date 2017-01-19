@@ -17,12 +17,15 @@ class SongModel extends CI_model{
         $db=$this->load->database();
 
         $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
-        if(is_array($emotion)){
-            $this->db->where_in('Emotion',$emotion);
-        }
-        else{
-            $this->db->where('Emotion',$emotion);
-        }
+        $this->db->where('Emotion',$emotion);
+        $this->db->from('song');
+        $query = $this->db->get();
+        return $query->result();
+    }
+
+    public function getAllSongs(){
+        $db=$this->load->database();
+        $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
         $this->db->from('song');
         $query = $this->db->get();
         return $query->result();

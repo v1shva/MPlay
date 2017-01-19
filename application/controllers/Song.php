@@ -17,13 +17,17 @@ class Song extends CI_Controller {
     public function addsong()
     {
         $this->load->helper(array('form', 'url', 'html'));
-        $emotions = $this->input->post('emotions');
-        $emotions = implode(", ",$emotions);
+        $url = $this->input->post('url');
+        $filename = $this->input->post('filename');
+        $path = "";
+        if($filename){
+            $path = "media/songs/" . $filename;
+        }
         $data = array(
             'Title' => $this->input->post('title'),
             'Artist' => $this->input->post('artist'),
-            'path' => $this->input->post('url'),
-            'Emotions' => $emotions
+            'path' => $path,
+            'Emotion' => $this->input->post('emotion')
         );
         $this->load->model('SongModel');
         if($this->SongModel->addsongdb($data)){
@@ -31,7 +35,7 @@ class Song extends CI_Controller {
         }
         else{
             echo 'false';
-        };
+        }
 
 
     }
@@ -54,6 +58,12 @@ class Song extends CI_Controller {
         echo json_encode($data);
 
 
+    }
+
+    public function getAllSongs(){
+        $this->load->model('SongModel');
+        $this->data['Allsongs']=$this->SongModel->getAllSongs();
+        echo json_encode($this->data);
     }
 
 }
