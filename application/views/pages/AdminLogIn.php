@@ -39,5 +39,44 @@
                     </form>
 
 </body>
+<style type="text/css"> .form-module .toggle {
+    cursor: pointer;
+    position: absolute;
+    top: -0;
+    right: -0;
+    background: #3498db;
+    width: 160px;
+    height: 40px;
+    margin: -5px 0 0;
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    display: none;
+}
 
+.form-module input[type="submit"] {
+    background: #e74c3c;
+    width: 100%;
+    border: 0;
+    padding: 10px 15px;
+    color: #ffffff;
+    -webkit-transition: 0.3s ease;
+    transition: 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+.form-module {
+    position: relative;
+    background: white;
+    max-width: 400px;
+    width: 100%;
+    border-top: 5px solid #e74c3c;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.25);
+    margin: 0 auto;
+}
+
+</style>
 </html>
