@@ -53,7 +53,7 @@ class Song extends CI_Controller {
             $error = array('error' => $this->upload->display_errors());
             print_r($error);
         }
-        $data = '{}';
+        $data = '{success:"true"}';
         header('Content-Type: application/json');
         echo json_encode($data);
 
@@ -62,8 +62,9 @@ class Song extends CI_Controller {
 
     public function getAllSongs(){
         $this->load->model('SongModel');
-        $this->data['Allsongs']=$this->SongModel->getAllSongs();
+        $this->data['Allsongs']=$this->SongModel->getAllSongDetails();
         echo json_encode($this->data);
     }
+
 
 }

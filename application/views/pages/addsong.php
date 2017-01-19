@@ -42,19 +42,19 @@
                     <div class="form-group ui-widget">
                         <label>Song Title:</label>
                         <input onfocusout="validateTitle(this)" type="text" class="form-control" id="title" title="tooltip" >
-                        <div class="cssload-thecube">
+                        <div id="titleLoader" style="display: none" class="cssload-thecube">
                             <div class="cssload-cube cssload-c1"></div>
                             <div class="cssload-cube cssload-c2"></div>
                             <div class="cssload-cube cssload-c4"></div>
                             <div class="cssload-cube cssload-c3"></div>
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group ui-widget">
                         <label for="pwd">Artist:</label>
-                        <input type="text" class="form-control" id="artist">
+                        <input onfocusout="validateArtist(this);validateArtistAndTitle(this)" type="text" class="form-control" id="artist" title="tooltip">
                     </div>
-                    <div class="form-group">
-                        <label for="pwd">Mood:</label>
+                    <div class="form-group ui-widget">
+                        <label id="moodLable">Mood:</label>
                         <div class="container-fluid moods">
                             <img src="<?php echo base_url("media/moods/happy.png"); ?>" border="0" class="img-circle emoiconInput" name="happy">
                             <img src="<?php echo base_url("media/moods/in-love.png"); ?>" border="0" class="img-circle emoiconInput" name="in-love">
@@ -92,13 +92,13 @@
                     </div>
 
                     <div class="checkbox">
-                        <label><input type="checkbox"> I agree to the terms and conditions of the MPlay web app.</label>
+                        <label><input type="checkbox" onchange="agree(this)"> I agree to the terms and conditions of the MPlay web app.</label>
                     </div>
-                    <button id="submitdata" type="submit" class="btn btn-default fileinput-upload fileinput-upload-button">Submit</button>
 
                 </form>
             </div>
             <div class="modal-footer">
+                <button id="submitdata" type="submit" class="btn btn-default fileinput-upload fileinput-upload-button" disabled="">Submit</button>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -111,14 +111,17 @@
     var artistValid = false;
     var moodValid = false;
     var songValid = false;
+    var agreeValid = false;
     function isText(str) {
         return /^[a-zA-Z()]+$/.test(str);
     }
 
 
-
+    var titles = [];
+    var artists = [];
     function retrieveSongTitles(title){
-        var titles = [];
+        titles = [];
+        $('#titleLoader').css("display","block");
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url(); ?>" + "index.php/Song/getAllSongs",
@@ -127,24 +130,15 @@
             complete: function(r){
                 var data = JSON.parse(r.responseText);
                 var songs = data.Allsongs;
-                console.log(data.Allsongs);
+                $('#titleLoader').css("display","none");
                 var i;
                 for(i=0;i<songs.length;i++){
                     titles.push(songs[i].Title);
+                    artists.push(songs[i].Artist);
                 }
-                $(title).customcomplete({
+                $(title).autocomplete({
                     source: titles
                 });
-                if(titles.indexOf(title.value)!=-1){
-                    $(title).tooltip({
-                        content: "This song already contains in the database.",
-                        tooltipClass: "errorMsg"
-                    });
-                    title.style.background = "#e74c3c";
-                }
-                else{
-                    title.style.background = "#2ECC71";
-                }
             }
         });
     }
@@ -155,18 +149,95 @@
                 content: "Invalid Title",
                 tooltipClass: "errorMsg"
             });
-            title.style.background = "#e74c3c";
+            title.style.background = "#FDE3A7";
+            titleValid = false;
         }
         else{
             retrieveSongTitles(title);
         }
     }
 
-    function verifyTitle(title){
-        $(title).autocomplete({
-
-        });
+    function validateArtist(artist){
+        if(!isText(artist.value)){
+            $(title).tooltip({
+                content: "Invalid Artist",
+                tooltipClass: "errorMsg"
+            });
+            artist.style.background = "#FDE3A7";
+            artistValid = false;
+        }
+        else{
+            $(artist).autocomplete({
+                source: artists
+            });
+            artistValid = true;
+        }
     }
+
+    function validateArtistAndTitle() {
+        var title = $("input#title").val();
+        var artist = $("input#artist").val();
+        if(titles.indexOf(title.value)!=-1 && artists.indexOf(artist.value)!=-1){
+            $(title).tooltip({
+                content: "This song already contains in the database.",
+                tooltipClass: "errorMsg"
+            });
+            title.style.background = "#FDE3A7";
+            $(artist).tooltip({
+                content: "This song already contains in the database.",
+                tooltipClass: "errorMsg"
+            });
+            artist.style.background = "#FDE3A7";
+            titleValid = false;
+            artistValid = false;
+        }
+        else{
+            title.style.background = "#C8F7C5";
+            artist.style.background = "#C8F7C5";
+            titleValid = true;
+            artistValid = true;
+        }
+    }
+    var selectedEmotionInput = "";
+    $('.emoiconInput').click(function(){
+        selectedEmotionInput = this.getAttribute('name');
+        $('.emoiconInput').each(function(i, obj) {
+            $(obj).removeClass('selected');
+        });
+        $(this).addClass('selected');
+        validateEmotion();
+
+    });
+    function validateEmotion() {
+        if(selectedEmotionInput==""){
+            moodValid = false;
+            $('#moodLable').html('Mood: Please select a value');
+            $('#moodLable').css("color", "red");
+        }
+        else{
+            moodValid = true;
+            $('#moodLable').html('Mood: '+selectedEmotionInput);
+            $('#moodLable').css("color", "black");
+        }
+    }
+
+    function agree(select){
+        validateEmotion();
+        validateUpload();
+        if(select.checked){
+            agreeValid = true;
+        }
+        else{
+            agreeValid = false;
+        }
+    }
+
+    function validateUpload(){
+        console.log($('.file-preview-frame.file-preview-error').html());
+        console.log($('.file-preview-frame.file-preview-success').html());
+    }
+
+
     //song upload process
     var selectedTab = "file";
     function selectOption(value) {
@@ -217,5 +288,6 @@
             });
         });
     });
+
 </script>
 
