@@ -49,5 +49,10 @@ class UserModel extends CI_model{
          
     } 
      
-     
+     function getusercount(){
+      $this->db->from('user');
+      $query = $this->db->get();
+      $rowcount = $query->num_rows();
+      return $rowcount;
+     }
 }

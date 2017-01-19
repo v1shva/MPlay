@@ -12,13 +12,13 @@ class AdminCtrl extends CI_Controller {
         parent::__construct();
         $this->load->library('session');
       //  $this->load->library('form_validation');
-       // $this->load->model('UserModel');
+        $this->load->model('AdminModel');
         $this->load->database();
 
     }
 
 
-    public function view($page = 'AdminLogIn')
+    public function index($page = 'AdminLogIn')
     {
         $data['title'] = ucfirst($page); // Capitalize the first letter
         $this->load->view('pages/'.$page, $data);
@@ -26,18 +26,49 @@ class AdminCtrl extends CI_Controller {
 
     }
     public function login(){
-    	$username=$this->input->post('username');
-        $password=$this->input->post('password');
-        $this->load->model('AdminModel');
-        $data=$this->AdminModel->signin($username,$password);
+        $data=$this->AdminModel->signin();
        if($data){
-            $this->load->view('pages/admin_dashboard');
+       	    $this->load->view('templates/session');
+            $this->home();
 
         }else{
 
-            $this->load->view('pages/AdminLogIn');
+            $this->index();
             
         }
     }
+
+    function logout(){
+
+		$this->AdminModel->logout();
+		$this->index();
+
+	}
    
+
+    public function home(){
+    	$this->load->model('UserModel');
+    	$username=$this->session->userdata('username'); 
+    	$id=$this->session->userdata('id'); 
+    	$data['count'] = $this->UserModel->getusercount();
+    	$data['profiledata'] = $this->AdminModel->profile($username,$id);
+    	$this->load->view('pages/admin_dashboard', $data);
+    }
+    //   function profile(){ 
+ 	 	  
+  		 
+  		// $this->load->view('pages/AdminProfile',$this->data); 
+
+ // } 
+    
+
+
+   public function report(){
+    $this->load->view('templates/session'); 
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);  	
+   	$this->load->view('pages/reports', $data);
+   }
+
 }
