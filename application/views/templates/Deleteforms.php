@@ -403,61 +403,38 @@
             <!-- form start -->
             <form role="form">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Song Name</label>
-            <input class="form-control" type="text" placeholder="Default input">
-                </div>
-                <div class="form-group">
-                  <label for="Artist">Artist</label>
-                  <input type="text" class="form-control" id="Artist" placeholder="Artist">
-                </div>
+        <div class="input-group">
+          <input onfocus="retrieveSongTitles(this)" id="search-input" type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button  onclick= "Searchsong(this)" type="button" name="search" id="search" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+         </div>
                 
-                <div class="form-group">
-                  <label>Description</label>
-                  <textarea class="form-control" rows="3" placeholder="Description"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Upload Audio</label>
-                  <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/AdminCtrl/uploadSong'; ?>">
-
-                </div>
-
-                <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control">
-                    <option value="1">confused</option>
-                    <option value="2" >angry</option>
-                    <option value="3">crying</option>
-                    <option value="4">embarrassed</option>
-                    <option value="5">smiling</option>
-                    <option value="6">suspicious</option>
-                    <option value="7">crazy</option>
-                    <option value="8">naughty</option>
-                    <option value="9">bored</option>
-                    <option value="10">revengeful</option>
-                    
-
-                  </select>
-                </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
                 </div>
               </div>
               <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
             </form>
           </div>
           <!-- /.box -->
 
           <!-- /.box -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+                   <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Search Results</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form">
+          <div id="searchresults"></div>
 
+                </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        </div>
          
             <!-- /.box-body -->
           </div>
@@ -466,6 +443,7 @@
 
         </div>
         <!--/.col (right) -->
+
       </div>
       <!-- /.row -->
     </section>
@@ -677,14 +655,51 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+    // validation and verification process
+    var titleValid = false;
+    var artistValid = false;
+    var moodValid = false;
+    var songValid = false;
+    var agreeValid = false;
+    var uploadValid = false;
+    function isText(str) {
+        return /^[a-zA-Z()]+$/.test(str);
+    }
+
+
+    var titles = [];
+    var artists = [];
+    function Searchsong(title){
+        var searchterm= $('#search-input').val();
+         $("#searchresults").html('<div id="titleLoader" style="display: none" class="cssload-thecube">\
+                            <div class="cssload-cube cssload-c1"></div>\
+                            <div class="cssload-cube cssload-c2"></div>\
+                            <div class="cssload-cube cssload-c4"></div>\
+                            <div class="cssload-cube cssload-c3"></div>\
+                        </div>');
+        titles = [];
+        $('#titleLoader').css("display","block");
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/AdminCtrl/searchSong",
+            dataType: 'json',
+            data: {search:searchterm},
+            complete: function(r){
+              $("#searchresults").html('');
+                var data = JSON.parse(r.responseText);
+                var songs = data.song;
+                var i;
+                for(i=0;i<songs.length;i++){
+                  $("#searchresults").append(songs[i].Title+"<br>");
+                }
+
+
+
+            }
+        });
+    }
+    </script>
 </body>
 </html>

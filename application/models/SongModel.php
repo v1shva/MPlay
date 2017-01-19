@@ -32,12 +32,30 @@ class SongModel extends CI_model{
     }
 
 
-    public function searcSong($title){
+    public function searchSong($title){
         $db=$this->load->database();
-        $this->db->select("ID,Title,Artist,Decade,Emotion,path,tags,url,playcount,language,UserID");
-        $this->db->from('song');
-        $query = $this->db->get_where('song', array('Title' => $title),10,5);
+         $query = $this->db->select('*')->from('song')->like('Title',$title)->get();
         return $query->result();
+/*        $this->db->from('song');
+        $query =$this->db->like('Title','$title');
+        return $query->result();*/
 
     }
+
+
+
+    public function getUploads(){
+      $this->db->from('song');
+      $query = $this->db->get();
+      $rowcount = $query->num_rows();
+      return $rowcount;
+     }
+
+
+     public function searchSongByid($id){
+        $db=$this->load->database();
+         $query = $this->db->select('*')->from('song')->where('ID',$id)->get();
+        return $query->result();
+     }
+
 }

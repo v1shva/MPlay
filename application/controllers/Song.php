@@ -65,10 +65,5 @@ class Song extends CI_Controller {
         echo json_encode($this->data);
     }
 
-    public function searchSong(){
-        $this->load->modal('SongModel');
-        $this->data['song']=$this->SongModel->searcSong();
-        echo json_encode($this->data);
 
-    }
 }
