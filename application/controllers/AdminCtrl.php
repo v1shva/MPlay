@@ -44,6 +44,12 @@ class AdminCtrl extends CI_Controller {
 		$this->view();
 
 	}
+	function profile(){
+	$username=$this->session->userdata('username');
+    $id=$this->session->userdata('id');	
+	$this->data['profiledata'] = $this->AdminModel->profile($username,$id);
+	$this->load->view('pages/AdminProfile',$this->data);
+	}
    
 
     public function index(){
