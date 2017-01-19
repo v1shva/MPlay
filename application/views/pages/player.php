@@ -54,11 +54,11 @@
             To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
         </div>
     </div>
-    		<div class="jp-playlist" id="playlist">
-			<ul>
-				<li>&nbsp;</li>
-			</ul>
-		</div>
+    <div class="jp-playlist">
+        <ul>
+            <li>&nbsp;</li>
+        </ul>
+    </div>
 </div>
     </div>
 
@@ -67,15 +67,22 @@
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/jplayer/jquery.jplayer.min.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("assets/player/dist/add-on/jplayer.playlist.min.js"); ?>"></script>
 <script>
+    var songs;
 $(document).ready(function(){
 	jQuery.ajax({
 		type: "POST",
 		url: "index.php/Player/load_playlist",
 		dataType: 'json',
-		data: {emotins:selectedEmotions},
+		data: {emotion:selectedEmotion},
 		complete: function(r){
+            manualList = [{
+                title:"Cro Magnon Man",
+                artist:"The Stark Palace",
+                mp3:"http://www.jplayer.org/audio/mp3/TSP-01-Cro_magnon_man.mp3",
+                oga:"http://www.jplayer.org/audio/ogg/TSP-01-Cro_magnon_man.ogg",
+                poster: "http://www.jplayer.org/audio/poster/The_Stark_Palace_640x360.png"
+            }]
 			var data = JSON.parse(r.responseText);
-			console.log(data);
 			for (var i in data.songs) {
 				var item = data.songs[i];
 				playlist.push({
@@ -83,7 +90,8 @@ $(document).ready(function(){
 					mp3 : "<?php echo base_url();?>" + item.path,
 				});
 			}
-			new jPlayerPlaylist({
+			console.log(playlist,selectedEmotion);
+			songs = new jPlayerPlaylist({
 				jPlayer: "#jquery_jplayer_1",
 				cssSelectorAncestor: "#jp_container_1"
 			}, playlist , {

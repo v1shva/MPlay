@@ -7,23 +7,23 @@
  */ ?>
 
 <html>
-        <head>
-            <meta charset="utf-8" />
-            <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-                <title>mPlay</title>
-                <link rel="stylesheet" href="<?php echo base_url("assets/fileinput/css/fileinput.css"); ?>"  media="all" rel="stylesheet" type="text/css">
-                <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-                <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
-                <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/blue.monday/css/jplayer.blue.monday.min.css"); ?>" />
-            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
-            <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>
-            <script>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+        <title>mPlay</title>
+        <link rel="stylesheet" href="<?php echo base_url("assets/fileinput/css/fileinput.css"); ?>"  media="all" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+        <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
+        <link rel="stylesheet" href="<?php echo base_url("assets/css/animatedLoader.css"); ?>" />
+        <link href="<?php echo base_url("assets/css/jquery-ui.css"); ?>" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+        <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-ui.js"); ?>"></script>
+        <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>
 
+    </head>
 
-            </script>
-
-        </head>
-        <body>
+    <body>
 
         <nav class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
