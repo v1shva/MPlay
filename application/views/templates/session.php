@@ -3,7 +3,7 @@ $loggedin = $this->session->userdata('loggedin');
 
 if ($loggedin != true) {
   
-  $dd = base_url('index.php/AdminCtr/view');
+  $dd = base_url('index.php/AdminCtrl/index');
   redirect($dd);
   exit();
 }

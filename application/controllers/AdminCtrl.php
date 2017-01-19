@@ -64,8 +64,11 @@ class AdminCtrl extends CI_Controller {
 
 
    public function report(){
-    $this->load->view('templates/session');   	
-   	$this->load->view('pages/reports');
+    $this->load->view('templates/session'); 
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);  	
+   	$this->load->view('pages/reports', $data);
    }
 
 }
