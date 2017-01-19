@@ -21,24 +21,24 @@
   <link rel="stylesheet" href="<?php echo base_url("assets/css/skins/_all-skins.min.css")?>">
 <!-- jQuery 2.2.3 -->
   <script src="<?php echo base_url("assets/js/admin/jQuery/jquery-2.2.3.min.js")?>"></script>
-	<!-- Bootstrap 3.3.6 -->
+  <!-- Bootstrap 3.3.6 -->
   <script src="<?php echo base_url("assets/js/bootstrap.min.js")?>"></script>
-	<!-- FastClick -->
+  <!-- FastClick -->
   <script src="<?php echo base_url("assets/js/admin/fastclick/fastclick.js")?>"></script>
-	<!-- AdminLTE App -->
+  <!-- AdminLTE App -->
   <script src="<?php echo base_url("assets/js/app.min.js")?>"></script>
-	<!-- Sparkline -->
+  <!-- Sparkline -->
   <script src="<?php echo base_url("assets/js/admin/sparkline/jquery.sparkline.min.js")?>"></script>
-	<!-- jvectormap -->
+  <!-- jvectormap -->
   <script src="<?php echo base_url("assets/js/admin/jvectormap/jquery-jvectormap-1.2.2.min.js")?>"></script>
   <script src="<?php echo base_url("assets/js/admin/jvectormap/jquery-jvectormap-world-mill-en.js")?>"></script>
-	<!-- SlimScroll 1.3.0 -->
+  <!-- SlimScroll 1.3.0 -->
   <script src="<?php echo base_url("assets/js/admin/slimScroll/jquery.slimscroll.min.js")?>"></script>
-	<!-- ChartJS 1.0.1 -->
+  <!-- ChartJS 1.0.1 -->
   <script src="<?php echo base_url("assets/js/admin/chartjs/Chart.min.js")?>"></script>
-	<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+  <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
   <script src="<?php echo base_url("assets/js/pages/dashboard2.js")?>"></script>
-	<!-- AdminLTE for demo purposes -->
+  <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
 
@@ -261,21 +261,18 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="user-image" alt="User Image">
-              <?php foreach($profiledata as $profile){?>
-              <span class="hidden-xs"><?php echo $profile->name;?></span>
-
+              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <span class="hidden-xs">Alexander Pierce</span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
+                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin -<?php echo $profile->name;?>
-                  <small><?php echo $profile->email;?></small>
+                  Alexander Pierce - Web Developer
+                  <small>Member since Nov. 2012</small>
                 </p>
-                
               </li>
               <!-- Menu Body -->
               <li class="user-body">
@@ -294,9 +291,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-               <!--  <div class="pull-left">
+                <div class="pull-left">
                   <a href="<?php echo base_url('index.php/AdminCtrl/profile'); ?>" class="btn btn-default btn-flat">Profile</a>
-                </div> -->
+                </div>
                 <div class="pull-right">
                   <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -319,11 +316,10 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
+          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p><?php echo $profile->name;?></p>
-          <?php }?>
+          <p>Alexander Pierce</p>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -361,8 +357,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="addforms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
-            <li><a href="deleteforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
-            <li><a href="modifyforms"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
+            <li><a href="modifyforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
+            <li><a href="deleteform"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
           </ul>
         </li>
         <li>
@@ -378,375 +374,129 @@
     </section>
     <!-- /.sidebar -->
   </aside>
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Dashboard
-        <small>Version 2.0</small>
+        Modify Song
+        <small>Form</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li><a href="#">Forms</a></li>
+        <li class="active">General Elements</li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <!-- Info boxes -->
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-aqua"><i class="ion ion-ios-gear-outline"></i></span>
+        <!-- left column -->
 
-            <div class="info-box-content">
-              <span class="info-box-text">Committed Changes</span>
-              <span class="info-box-number">90<small>%</small></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-red"><i class="fa fa-google-plus"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Rated Users</span>
-              <span class="info-box-number"><?php echo $numOfLikes;?></span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-
-        <!-- fix for small devices only -->
-        <div class="clearfix visible-sm-block"></div>
-
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="ion ion-ios-cart-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Sales</span>
-              <span class="info-box-number">760</span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-        <div class="col-md-3 col-sm-6 col-xs-12">
-          <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="ion ion-ios-people-outline"></i></span>
-
-            <div class="info-box-content">
-              <span class="info-box-text">Members</span>
-              <span class="info-box-number"> <?php echo $count ?> </span>
-            </div>
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box">
+        <div class="col-md-6">
+          <div class="box box-success">
             <div class="box-header with-border">
-              <h3 class="box-title">Monthly Recap Report</h3>
+              <h3 class="box-title">Modify Song</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
 
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+            <form role="form">
+
+              <div class="box-body">
+
+        <div class="input-group">
+          <input type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
-                <div class="btn-group">
-                  <button type="button" class="btn btn-box-tool dropdown-toggle" data-toggle="dropdown">
-                    <i class="fa fa-wrench"></i></button>
-                  <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
+              </span>
+        </div>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Song Name</label>
+            <input  autocomplete="on" class="form-control" type="text" placeholder="Default input">
                 </div>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                <div class="form-group">
+                  <label for="Artist">Artist</label>
+                  <input type="text" class="form-control" id="Artist" placeholder="Artist">
+                </div>
+                
+                <div class="form-group">
+                  <label>Description</label>
+                  <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+                </div>
+
+                <div class="form-group">
+                  <label for="exampleInputFile">Upload Audio</label>
+                  <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/AdminCtrl/uploadSong'; ?>">
+
+                </div>
+
+                <div class="form-group">
+                  <label>Select</label>
+                  <select class="form-control">
+                    <option value="1">confused</option>
+                    <option value="2" >angry</option>
+                    <option value="3">crying</option>
+                    <option value="4">embarrassed</option>
+                    <option value="5">smiling</option>
+                    <option value="6">suspicious</option>
+                    <option value="7">crazy</option>
+                    <option value="8">naughty</option>
+                    <option value="9">bored</option>
+                    <option value="10">revengeful</option>
+                    
+
+                  </select>
+                </div>
+
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox"> Check me out
+                  </label>
+                </div>
               </div>
+              <!-- /.box-body -->
+
+              <div class="box-footer">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
+          </div>
+          <!-- /.box -->
+
+          <!-- /.box -->
+
+         
+            <!-- /.box-body -->
+          </div>
+        <div class="col-md-6">
+          <!-- general form elements -->
+                   <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Search Results</h3>
             </div>
             <!-- /.box-header -->
             <div class="box-body">
-              <div class="row">
-                <div class="col-md-8">
-                  <p class="text-center">
-                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                  </p>
-
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
-                <!-- /.col -->
-                <div class="col-md-4">
-                  <p class="text-center">
-                    <strong>Manthly added songs emotion based</strong>
-                  </p>
-                  <?php foreach($emo as $emo1){
-                   if($emo1->Emotion=='angry'){?>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">angry</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                    <div class="progress-bar progress-bar-red" style="width:<?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-                   <?php  break;} }?> 
-                  <?php foreach($emo as $emo1){
-                    if($emo1->Emotion=='bored'){?>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">bored</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='confused'){?>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">confused</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='crazy'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">crazy</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='crying'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">crying</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#9b59b6; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='embarrassed'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">embarrassed</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#e67e22;width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='happy'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">happy</span>
-                    <span class="progress-number"><b><?php if($emo1->Emotion='happy') echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#f39c12; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?>  
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='in-love'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">in-love</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#95a5a6; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?>  
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='naughty'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">naughty</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style="background-color:#f1c40f; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?> 
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='revengeful'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">revengeful</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style=" background-color:#1abc9c; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?>  
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='smiling'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">smiling</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style=" background-color:#2c3e50; width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;} }?>  
-
-                     <?php foreach($emo as $emo1){
-                      if($emo1->Emotion=='suspicious'){?>
-
-                   <div class="progress-group">
-                    <span class="progress-text">suspicious</span>
-                    <span class="progress-number"><b><?php echo $emo1->cunt;?></b>/<?php echo $num;?></span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar" style=" background-color:#7f8c8d;width: <?php echo (floatval($emo1->cunt)/floatval($num))*100;?>%"></div>
-                    </div>
-                  </div>
-
-                  <?php break;}  }?>  
-
-                  <!-- /.progress-group -->
-                </div>
-               
-                <!-- /.col -->
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- ./box-body -->
-            <div class="box-footer">
-              <div class="row">
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header">$24,813.53</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block">
-                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                    <h5 class="description-header">1200</h5>
-                    <span class="description-text">GOAL COMPLETIONS</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.box-footer -->
+              <form role="form">
+                <!-- text input -->
+                </form>
           </div>
           <!-- /.box -->
         </div>
-        <!-- /.col -->
-      </div>
-      <!-- /.row -->
-
-      <!-- Main row -->
-      <div class="row">
-        <!-- Left col -->
-        <div class="col-md-8">
-          <!-- MAP & BOX PANE -->
- 
-          <!-- /.box -->
-          <div class="row">
-            <div class="col-md-6">
-              <!-- DIRECT CHAT -->
-
-          <!-- /.row -->
-
-          </div>
-          <!-- /.box -->
         </div>
-        <!-- /.col -->
+          <!-- /.box -->
 
 
-        <!-- /.col -->
+        </div>
+        <!--/.col (right) -->
       </div>
       <!-- /.row -->
     </section>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
-
   <footer class="main-footer">
     <div class="pull-right hidden-xs">
       <b>Version</b> 2.3.11
@@ -870,7 +620,9 @@
 
       </div>
       <!-- /.tab-pane -->
-
+      <!-- Stats tab content -->
+      <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+      <!-- /.tab-pane -->
       <!-- Settings tab content -->
       <div class="tab-pane" id="control-sidebar-settings-tab">
         <form method="post">
@@ -946,9 +698,18 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-
 </div>
 <!-- ./wrapper -->
 
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
 </body>
 </html>

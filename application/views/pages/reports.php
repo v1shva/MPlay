@@ -354,9 +354,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="forms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
+            <li><a href="addforms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
+            <li><a href="deleteforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
+            <li><a href="modifyforms"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
           </ul>
         </li>
         <li class="active">
