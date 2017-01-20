@@ -70,9 +70,12 @@ class AdminCtrl extends CI_Controller {
    public function report(){
     $this->load->view('templates/session'); 
     $username=$this->session->userdata('username'); 
-    $id=$this->session->userdata('id'); 
+    $id=$this->session->userdata('id');
+    $this->load->model('SongModel');
+    $data['uploadcount'] = $this->SongModel->getUploads(); 
     $data['profiledata'] = $this->AdminModel->profile($username,$id);  	
    	$this->load->view('pages/reports', $data);
+
    }
 
    public function addforms(){
@@ -146,5 +149,25 @@ class AdminCtrl extends CI_Controller {
 
 
     }
+    public function searchSong(){
+        $this->load->model('SongModel');
+        $search=$this->input->post('search');
+        $this->data['song']=$this->SongModel->searchSong($search);
+        echo json_encode($this->data);
 
+    }
+
+    public function getUploades(){
+    	$this->load->model('SongModel');
+    	$data['uploadcount'] = $this->SongModel->getUploads();
+    	$this->load->view('pages/reports');
+    }
+
+
+    public function searchSongByid(){
+        $this->load->model('SongModel');
+        $search=$this->input->post('id');
+        $this->data['song']=$this->SongModel->searchSongByid($search);
+        echo json_encode($this->data);
+    }
 }

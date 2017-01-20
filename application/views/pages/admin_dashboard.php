@@ -361,8 +361,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="addforms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
-            <li><a href="deleteforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
-            <li><a href="modifyforms"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
+            <li><a href="modifyforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
+            <li><a href="deleteform"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
           </ul>
         </li>
         <li>
@@ -482,17 +482,21 @@
             <!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                <div class="col-md-8">
-                  <p class="text-center">
-                    <strong>Sales: 1 Jan, 2014 - 30 Jul, 2014</strong>
-                  </p>
+                          <div class="box box-danger">
+            <div class="box-header with-border">
+              <h3 class="box-title">Donut Chart</h3>
 
-                  <div class="chart">
-                    <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
-                  </div>
-                  <!-- /.chart-responsive -->
-                </div>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>
+            <div class="box-body">
+              <canvas id="pieChart" style="height:250px"></canvas>
+            </div>
+            <!-- /.box-body -->
+          </div>
                 <!-- /.col -->
                 <div class="col-md-4">
                   <p class="text-center">

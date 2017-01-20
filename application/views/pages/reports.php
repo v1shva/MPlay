@@ -355,8 +355,8 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="addforms"><i class="fa fa-circle-o text-red"></i> Add Song</a></li>
-            <li><a href="deleteforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
-            <li><a href="modifyforms"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
+            <li><a href="modifyforms"><i class="fa fa-circle-o text-green"></i>Modify Song</a></li>
+            <li><a href="deleteform"><i class="fa fa-circle-o text-yellow"></i>Delete Song</a></li>
           </ul>
         </li>
         <li class="active">
@@ -426,7 +426,7 @@
 
             <div class="info-box-content">
               <span class="info-box-text">Uploads</span>
-              <span class="info-box-number">13,648</span>
+              <span class="info-box-number"><?php echo $uploadcount ?></span>
             </div>
             <!-- /.info-box-content -->
           </div>
