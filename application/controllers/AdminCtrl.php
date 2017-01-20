@@ -77,17 +77,26 @@ class AdminCtrl extends CI_Controller {
 
    public function addforms(){
     $this->load->view('templates/session'); 
-   	$this->load->view('templates/Addforms');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);
+   	$this->load->view('templates/Addforms',$data);
    }
 
    public function deleteform(){
-    $this->load->view('templates/session'); 
-   	$this->load->view('templates/Deleteforms');
+    $this->load->view('templates/session');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);  
+   	$this->load->view('templates/Deleteforms', $data);
    }
 
    public function modifyforms(){
     $this->load->view('templates/session'); 
-   	$this->load->view('templates/Modifyforms');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id); 
+   	$this->load->view('templates/Modifyforms',$data);
    }
 
        public function uploadSong()
