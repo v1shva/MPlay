@@ -1,10 +1,15 @@
+
 <?php
-/**
- * Created by PhpStorm.
- * User: Vishva
- * Date: 11/17/2016
- * Time: 10:40 PM
- */ ?>
+
+
+
+
+if($this->session->userdata('logged_in')) {
+    //$session_data = $this->session->userdata('loggin');
+    $name=$this->session->userdata('username');
+}
+
+ ?>
 
 <html>
     <head>
@@ -47,8 +52,21 @@
                             <li class="<?php echo $activeAboutUs ?>"><a href="#">About Us</a></li>
 
                         </ul>
-                        <ul class="navbar-right nav navbar-nav">
-                            <li class="<?php echo $activeUser ?>" ><a href="userDetails">User Name <span class="sr-only">(current)</span></a></li>
+                        <!--<ul class="navbar-left nav navbar-nav">
+
+                        </ul>-->
+
+                        <ul class="nav navbar-nav navbar-right">
+                            <!--<li><a href="<?php echo base_url("index.php/LoginSignUp/view"); ?>"><span class="glyphicon glyphicon-log-in"></span> Login/Sign Up</a></li>-->
+                            <!--<li><a href="<?php echo base_url("index.php/LoginSignUp/logout"); ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>-->
+                            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#"><span class="glyphicon glyphicon-menu-hamburger"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li class="<?php echo $activeUser ?>" ><a href="userDetails"><?php echo $name; ?><span class="sr-only">(current)</span></a></li>
+                                    <li><a href="<?php echo base_url("index.php/LoginSignUp/logout"); ?>"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+
+                                </ul>
+                            </li>
+
                         </ul>
 
                         <form class="navbar-form navbar-right">
@@ -59,11 +77,32 @@
 
                         <div class="navbar-right navbar-form">
                             <button class="btn btn-default" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#addsong"><span class="glyphicon glyphicon-user"></span> Add Song</button>
+                        <div class="navbar-left navbar-form">
+                            <button class="btn btn-default" data-toggle="modal" data-target="#addsong"><span class="glyphicon glyphicon-user"></span> Add Song</button>
+
+
                         </div>
+
+
+
+
+
+
 
 
                 </div>
         </nav>
+
+
+
+
+
+
+
+
+
+
+
         <script>
             (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
                     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

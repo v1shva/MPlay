@@ -97,15 +97,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 							<input type="submit" value="Login">
                                                         <hr style="border-top: 1px solid #8c8b8b;">
-							<div class="alert alert-warning">
-                                                           
+
+
 								<?php 
-							   if($this->session->flashdata('login_error') ){
-                                                        		echo "<strong>Warning!</strong> You entered rong data";
-										}
-									echo validation_errors(); 
-							?> 
-							</div>
+							   if($this->session->flashdata('login_error') ) {
+								   /*echo "<div class=\'alert alert-warning\' >";
+                                    echo " Username or Password is Incorrect";
+								   echo validation_errors();
+									echo  "</div>";*/
+								   $message = "Username and/or Password incorrect.\\nTry again.";
+								   echo "<script type='text/javascript'>alert('$message');</script>";
+
+							   }
+								?>
+
+
 					               <!-- <div id="fb-root"></div>
                                                    <div class="fb-login-button" data-max-rows="2" data-size="xlarge" data-show-faces="false" data-auto-logout-link="true"></div>-->
                                                                                                            
@@ -131,7 +137,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                            
 								<?php 
 							   if($this->session->flashdata('login_error') ){
-                                                        		echo "<strong>Warning!</strong> You entered rong data";
+								   $message = "Username or Password or email is already exist incorrect.\\nTry again.";
+								   echo "<script type='text/javascript'>alert('$message');</script>";
 										}
 									echo validation_errors(); 
 							?> 
@@ -156,67 +163,5 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 		</div>
 		
-	</div>
-	<div class="modal fade" id="infoModal" role="dialog">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-header" id="header" style="background-color: #337ab7;color:white">
-					<div class="bootstrap-dialog-header">
-						<div class="bootstrap-dialog-close-button" ></div>
-						<div class="bootstrap-dialog-title"><h3>Loading...</h3></div>
-					</div>
-				</div>
-				<div class="modal-body" id="body">
-				<h4> Your data is being processed.</h4>
-					<div class="loadersmall"></div>
 
-
-				</div>
-				<div class="modal-footer" id="footer">
-
-				</div>
-			</div>
-		</div>
-	</div>
-
-</body>
-<script>
-	$(document).ready(function() {
-		$("#register").click(function(event) {
-			event.preventDefault();
-			$('#infoModal').modal({backdrop: 'static', keyboard: false})
-			$('#infoModal').modal('show');
-			alert("hello");
-			var name = $("input#name").val();
-			var Dob = $("input#Dob").val();
-			var Country = $("input#Country").val();
-			var Mlanguage = $("input#Mlanguage").val();
-			var Username = $("input#Username").val();
-			var Email = $("input#Email").val();
-			var Password = $("input#Password").val();
-			jQuery.ajax({
-				type: "POST",
-				url: "<?php echo base_url(); ?>" + "index.php/LoginSignUp/addUserDB",
-				dataType: 'json',
-				data: {name: name, Dob: Dob,Country:Country,Mlanguage:Mlanguage,Username:Username,Email:Email,Password:Password},
-
-				 complete: function(r){
-				 if (r.responseText == 'true'){
-				 	$(".modal-header#header").html("Verify your Email");
-					 $(".modal-header#header").css("background-color","#5cb85c");
-					 $(".modal-body#body").html("Please check your email to verify your email address");
-					 $(".modal-footer#footer").html("<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>");
-				 }
-				 else{
-					 $(".modal-header#header").html("Failed");
-					 $(".modal-header#header").css("background-color","#d9534f");
-					 $(".modal-body#body").html("Sign in process failed");
-					 $(".modal-footer#footer").html("<button type=\"button\" class=\"btn btn-default\" data-dismiss=\"modal\">Close</button>");
-
-				 }
-				 }
-			});
-		});
-	});
-</script>
 </html>
