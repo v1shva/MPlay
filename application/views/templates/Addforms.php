@@ -272,8 +272,9 @@
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="user-image" alt="User Image">
-               <?php foreach($profiledata as $profile){?>
+              <?php foreach($profiledata as $profile){?>
               <span class="hidden-xs"><?php echo $profile->name;?></span>
+
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
@@ -281,9 +282,11 @@
                 <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Admin - <?php echo $profile->name;?>
+                  Admin -<?php echo $profile->name;?>
                   <small><?php echo $profile->email;?></small>
+                  <?php }?>
                 </p>
+                
               </li>
               <!-- Menu Body -->
               <li class="user-body">
@@ -302,7 +305,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-               
+               <!--  <div class="pull-left">
+                  <a href="" class="btn btn-default btn-flat">Profile</a>
+                </div> -->
                 <div class="pull-right">
                   <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -328,6 +333,7 @@
           <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
+        <?php foreach($profiledata as $profile){?>
           <p><?php echo $profile->name;?></p>
           <?php }?>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
