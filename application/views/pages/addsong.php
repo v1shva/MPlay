@@ -16,7 +16,7 @@
         <!-- Modal content-->
         <div class="modal-content" id="addsongContent">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <button id="closeFromTop" type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="modal-title">Add your Song</h4>
             </div>
             <div class="modal-body">
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-group ui-widget">
                         <label>Artist:</label>
-                        <input onfocusout="validateArtist(this);validateArtistAndTitle(this)" type="text" class="form-control" id="artist" title="tooltip">
+                        <input onfocusout="validateArtist(this);validateArtistAndTitle()" type="text" class="form-control" id="artist" title="tooltip">
                     </div>
                     <div class="form-group ui-widget">
                         <label id="moodLable">Mood:</label>
@@ -83,19 +83,19 @@
             </div>
             <div class="modal-footer">
                 <button id="submitdata" type="submit" class="btn btn-default fileinput-upload fileinput-upload-button" disabled="">Submit</button>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button id="closeFromBottom" type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 <script type="text/javascript">
+
     // validation and verification process
     var titleValid = false;
     var artistValid = false;
     var moodValid = false;
     var songValid = false;
     var agreeValid = false;
-    var uploadValid = false;
     function isText(str) {
         return /^[a-zA-Z()]+$/.test(str);
     }
@@ -159,9 +159,9 @@
     }
 
     function validateArtistAndTitle() {
-        var title = $("input#title").val();
-        var artist = $("input#artist").val();
-        if(titles.indexOf(title.value)!=-1 && artists.indexOf(artist.value)!=-1){
+        var title = $("input#title");
+        var artist = $("input#artist");
+        if(titles.indexOf(title.val())!=-1 && artists.indexOf(artist.val())!=-1){
             $(title).tooltip({
                 content: "This song already contains in the database.",
                 tooltipClass: "errorMsg"
@@ -176,8 +176,8 @@
             artistValid = false;
         }
         else{
-            title.style.background = "#C8F7C5";
-            artist.style.background = "#C8F7C5";
+            title.css("background","#C8F7C5");
+            artist.css("background","#C8F7C5");
             titleValid = true;
             artistValid = true;
         }
@@ -219,21 +219,50 @@
     function validateUpload(){
         var uploadError = $('.file-preview-frame.file-preview-error').html();
         var uploadSuccess = $('.file-preview-frame.file-preview-success').html();
-        if(!(typeof uploadSuccess === 'undefined'){
-            uploadValid = true;
+        if(!(typeof uploadSuccess === 'undefined')){
+            $('#uploadErrorMsg').css("display","block");
+            $('#uploadErrorMsg').html('<label style="color:greenyellow">Upload success</label>');
+            $('.form-group.songupload').css("display","none");
+            songValid = true;
         }
-        else if(!(typeof uploadError === 'undefined'){
-            uploadValid = false;
+        else if(!(typeof uploadError === 'undefined')){
+            $('#uploadErrorMsg').css("display","block");
+            $('#uploadErrorMsg').html('<label style="color:coral">Upload has failed</label>');
+            songValid = false;
+        }
+        else{
+            $('#uploadErrorMsg').css("display","block");
+            $('#uploadErrorMsg').html('<label style="color:coral">Please upload a file</label>');
+            songValid = false;
+            $('#closeFromBottom').prop("disabled", true);
+            $('#closeFromTop').prop("disabled", true);
         }
     }
+    var uploadClicked = false;
+
+    window.setInterval(function(){
+        validateAll();
+        $('.btn.btn-default.fileinput-upload.fileinput-upload-button').click(function(){
+            uploadClicked = true;
+        });
+        if(uploadClicked) {
+            validateUpload();
+        }
+    }, 50);
 
 
+    function validateAll() {
+        if(titleValid && artistValid && moodValid && songValid && agreeValid){
+            $('#submitdata').prop("disabled", false);
+        }
+    }
     //song upload process
     var selectedTab = "file";
     function selectOption(value) {
         selectedTab = value;
     }
     $(document).ready(function() {
+        //observer.disconnect();
         $("#submitdata").click(function(event) {
             event.preventDefault();
             var title = $("input#title").val();

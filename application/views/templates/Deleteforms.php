@@ -261,17 +261,18 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="user-image" alt="User Image">
+             <?php foreach($profiledata as $profile){?>
+              <span class="hidden-xs"><?php echo $profile->name;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Admin - <?php echo $profile->name;?>
+                  <small><?php echo $profile->email;?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -291,9 +292,7 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="<?php echo base_url('index.php/AdminCtrl/profile'); ?>" class="btn btn-default btn-flat">Profile</a>
-                </div>
+               
                 <div class="pull-right">
                   <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -316,10 +315,11 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $profile->name;?></p>
+          <?php }?>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -403,61 +403,38 @@
             <!-- form start -->
             <form role="form">
               <div class="box-body">
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Song Name</label>
-            <input class="form-control" type="text" placeholder="Default input">
-                </div>
-                <div class="form-group">
-                  <label for="Artist">Artist</label>
-                  <input type="text" class="form-control" id="Artist" placeholder="Artist">
-                </div>
+        <div class="input-group">
+          <input onfocus="retrieveSongTitles(this)" id="search-input" type="text" name="q" class="form-control" placeholder="Search...">
+              <span class="input-group-btn">
+                <button  onclick= "Searchsong(this)" type="button" name="search" id="search" class="btn btn-flat"><i class="fa fa-search"></i>
+                </button>
+              </span>
+         </div>
                 
-                <div class="form-group">
-                  <label>Description</label>
-                  <textarea class="form-control" rows="3" placeholder="Description"></textarea>
-                </div>
-
-                <div class="form-group">
-                  <label for="exampleInputFile">Upload Audio</label>
-                  <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/AdminCtrl/uploadSong'; ?>">
-
-                </div>
-
-                <div class="form-group">
-                  <label>Select</label>
-                  <select class="form-control">
-                    <option value="1">confused</option>
-                    <option value="2" >angry</option>
-                    <option value="3">crying</option>
-                    <option value="4">embarrassed</option>
-                    <option value="5">smiling</option>
-                    <option value="6">suspicious</option>
-                    <option value="7">crazy</option>
-                    <option value="8">naughty</option>
-                    <option value="9">bored</option>
-                    <option value="10">revengeful</option>
-                    
-
-                  </select>
-                </div>
-
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox"> Check me out
-                  </label>
                 </div>
               </div>
               <!-- /.box-body -->
-
-              <div class="box-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-              </div>
             </form>
           </div>
           <!-- /.box -->
 
           <!-- /.box -->
+        <div class="col-md-6">
+          <!-- general form elements -->
+                   <div class="box box-warning">
+            <div class="box-header with-border">
+              <h3 class="box-title">Search Results</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+              <form role="form">
+          <div id="searchresults"></div>
 
+                </form>
+          </div>
+          <!-- /.box -->
+        </div>
+        </div>
          
             <!-- /.box-body -->
           </div>
@@ -466,6 +443,7 @@
 
         </div>
         <!--/.col (right) -->
+
       </div>
       <!-- /.row -->
     </section>
@@ -677,14 +655,51 @@
 <!-- ./wrapper -->
 
 <!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
+<script type="text/javascript">
+    // validation and verification process
+    var titleValid = false;
+    var artistValid = false;
+    var moodValid = false;
+    var songValid = false;
+    var agreeValid = false;
+    var uploadValid = false;
+    function isText(str) {
+        return /^[a-zA-Z()]+$/.test(str);
+    }
+
+
+    var titles = [];
+    var artists = [];
+    function Searchsong(title){
+        var searchterm= $('#search-input').val();
+         $("#searchresults").html('<div id="titleLoader" style="display: none" class="cssload-thecube">\
+                            <div class="cssload-cube cssload-c1"></div>\
+                            <div class="cssload-cube cssload-c2"></div>\
+                            <div class="cssload-cube cssload-c4"></div>\
+                            <div class="cssload-cube cssload-c3"></div>\
+                        </div>');
+        titles = [];
+        $('#titleLoader').css("display","block");
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/AdminCtrl/searchSong",
+            dataType: 'json',
+            data: {search:searchterm},
+            complete: function(r){
+              $("#searchresults").html('');
+                var data = JSON.parse(r.responseText);
+                var songs = data.song;
+                var i;
+                for(i=0;i<songs.length;i++){
+                  $("#searchresults").append(songs[i].Title+"<br>");
+                }
+
+
+
+            }
+        });
+    }
+    </script>
 </body>
 </html>

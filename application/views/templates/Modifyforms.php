@@ -41,6 +41,12 @@
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
+        
+  <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-ui.js"); ?>"></script>
+  <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>  
+  <link rel="stylesheet" href="<?php echo base_url("assets/css/animatedLoader.css"); ?>" />
 
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -261,17 +267,18 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="user-image" alt="User Image">
+              <?php foreach($profiledata as $profile){?>
+              <span class="hidden-xs"><?php echo $profile->name;?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Admin - <?php echo $profile->name;?>
+                  <small><?php echo $profile->email;?></small>
                 </p>
               </li>
               <!-- Menu Body -->
@@ -291,9 +298,7 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="<?php echo base_url('index.php/AdminCtrl/profile'); ?>" class="btn btn-default btn-flat">Profile</a>
-                </div>
+               
                 <div class="pull-right">
                   <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -316,29 +321,21 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+          <p><?php echo $profile->name;?></p>
+          <?php }?>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form>
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="login">
+          <a href="home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -370,7 +367,7 @@
           </a>
         </li>
 
-
+</ul>
     </section>
     <!-- /.sidebar -->
   </aside>
@@ -407,32 +404,36 @@
               <div class="box-body">
 
         <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
+
+          <input onfocus="retrieveSongTitles(this)" id="search-input" type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                <button  onclick= "Searchsong(this)" type="button" name="search" id="search" class="btn btn-flat"><i class="fa fa-search"></i>
                 </button>
               </span>
+
+
+
         </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Song Name</label>
-            <input  autocomplete="on" class="form-control" type="text" placeholder="Default input">
+            <input name="songNameModify" onfocusout="validateTitle(this)" autocomplete="on" class="form-control" type="text" placeholder="Default input">
                 </div>
                 <div class="form-group">
                   <label for="Artist">Artist</label>
-                  <input type="text" class="form-control" id="Artist" placeholder="Artist">
+                  <input onfocusout="validateArtist(this);validateArtistAndTitle(this)" type="text" class="form-control" id="ArtistModify" placeholder="Artist">
                 </div>
                 
                 <div class="form-group">
                   <label>Description</label>
-                  <textarea class="form-control" rows="3" placeholder="Description"></textarea>
+                  <textarea name="DesModify" class="form-control" rows="3" placeholder="Description"></textarea>
                 </div>
-
+                <div class="col">
                 <div class="form-group">
                   <label for="exampleInputFile">Upload Audio</label>
                   <input id="fileup" data-show-upload="true" name="fileup" type="file" class="file" data-upload-url="<?php echo base_url().'index.php/AdminCtrl/uploadSong'; ?>">
 
                 </div>
-
+                </div>
                 <div class="form-group">
                   <label>Select</label>
                   <select class="form-control">
@@ -480,7 +481,7 @@
             <!-- /.box-header -->
             <div class="box-body">
               <form role="form">
-                <!-- text input -->
+          <div id="searchresults"></div>
                 </form>
           </div>
           <!-- /.box -->
@@ -700,16 +701,145 @@
   <div class="control-sidebar-bg"></div>
 </div>
 <!-- ./wrapper -->
+<script type="text/javascript">
+    // validation and verification process
+    var titleValid = false;
+    var artistValid = false;
+    var moodValid = false;
+    var songValid = false;
+    var agreeValid = false;
+    var uploadValid = false;
+    function isText(str) {
+        return /^[a-zA-Z()]+$/.test(str);
+    }
 
-<!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
+    var titles = [];
+    var artists = [];
+    function Searchsong(title){
+        var searchterm= $('#search-input').val();
+         $("#searchresults").html('<div id="titleLoader" style="display: none" class="cssload-thecube">\
+                            <div class="cssload-cube cssload-c1"></div>\
+                            <div class="cssload-cube cssload-c2"></div>\
+                            <div class="cssload-cube cssload-c4"></div>\
+                            <div class="cssload-cube cssload-c3"></div>\
+                        </div>');
+        titles = [];
+        $('#titleLoader').css("display","block");
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/AdminCtrl/searchSong",
+            dataType: 'json',
+            data: {search:searchterm},
+            complete: function(r){
+              $("#searchresults").html('');
+                var data = JSON.parse(r.responseText);
+                var songs = data.song;
+                var i;
+                for(i=0;i<songs.length;i++){
+                  $("#searchresults").append('<div style= class=text-center name ="' +songs[i].ID +'" onclick="getSong(this)">' +songs[i].Title+'</div> <br>');
+                }
+
+
+
+            }
+        });
+    }
+
+    function getSong(select){
+      var id = select.getAttribute('name');
+      console.log(id);
+            jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/AdminCtrl/searchSongByid",
+            dataType: 'json',
+            data: {id:id},
+            complete: function(r){
+              $("#searchresults").html('');
+                var data = JSON.parse(r.responseText);
+                var song = data.song;
+              $("#searchresults").html(song[0].Title);
+              $("#songNameModify").val(song[0].Title);
+              $("#ArtistModify").val(song[0].Artist);
+              $("#DesModify").val(song[0].tags);
+              $("#fileup").val(song[0].path);
+
+            }
+        });
+    }
+
+    function isText(str) {
+        return /^[a-zA-Z()]+$/.test(str);
+    }
+
+
+    var titles = [];
+    var artists = [];
+    function  validateTitle(title) {
+        if(!isText(title.value)){
+            $(title).tooltip({
+                content: "Invalid Title",
+                tooltipClass: "errorMsg"
+            });
+            title.style.background = "#FDE3A7";
+            titleValid = false;
+        }
+        else{
+            $(this).removeClass('selected');
+        }
+    }
+
+    function validateArtist(artist){
+        if(!isText(artist.value)){
+            $(title).tooltip({
+                content: "Invalid Artist",
+                tooltipClass: "errorMsg"
+            });
+            artist.style.background = "#FDE3A7";
+            artistValid = false;
+        }
+        else{
+            $(artist).autocomplete({
+                source: artists
+            });
+            artistValid = true;
+        }
+    }
+
+    function validateArtistAndTitle() {
+        var title = $("input#title").val();
+        var artist = $("input#artist").val();
+        if(titles.indexOf(title.value)!=-1 && artists.indexOf(artist.value)!=-1){
+            $(title).tooltip({
+                content: "This song already contains in the database.",
+                tooltipClass: "errorMsg"
+            });
+            title.style.background = "#FDE3A7";
+            $(artist).tooltip({
+                content: "This song already contains in the database.",
+                tooltipClass: "errorMsg"
+            });
+            artist.style.background = "#FDE3A7";
+            titleValid = false;
+            artistValid = false;
+        }
+        else{
+            title.style.background = "#C8F7C5";
+            artist.style.background = "#C8F7C5";
+            titleValid = true;
+            artistValid = true;
+        }
+    }
+    var selectedEmotionInput = "";
+    $('.emoiconInput').click(function(){
+        selectedEmotionInput = this.getAttribute('name');
+        $('.emoiconInput').each(function(i, obj) {
+            $(obj).removeClass('selected');
+        });
+        $(this).addClass('selected');
+        validateEmotion();
+
+    });
+    </script>
 </body>
 </html>

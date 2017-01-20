@@ -70,24 +70,36 @@ class AdminCtrl extends CI_Controller {
    public function report(){
     $this->load->view('templates/session'); 
     $username=$this->session->userdata('username'); 
-    $id=$this->session->userdata('id'); 
+    $id=$this->session->userdata('id');
+    $this->load->model('SongModel');
+    $data['uploadcount'] = $this->SongModel->getUploads(); 
     $data['profiledata'] = $this->AdminModel->profile($username,$id);  	
    	$this->load->view('pages/reports', $data);
+
    }
 
    public function addforms(){
     $this->load->view('templates/session'); 
-   	$this->load->view('templates/Addforms');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);
+   	$this->load->view('templates/Addforms',$data);
    }
 
    public function deleteform(){
-    $this->load->view('templates/session'); 
-   	$this->load->view('templates/Deleteforms');
+    $this->load->view('templates/session');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id);  
+   	$this->load->view('templates/Deleteforms', $data);
    }
 
    public function modifyforms(){
     $this->load->view('templates/session'); 
-   	$this->load->view('templates/Modifyforms');
+    $username=$this->session->userdata('username'); 
+    $id=$this->session->userdata('id'); 
+    $data['profiledata'] = $this->AdminModel->profile($username,$id); 
+   	$this->load->view('templates/Modifyforms',$data);
    }
 
        public function uploadSong()
@@ -137,5 +149,25 @@ class AdminCtrl extends CI_Controller {
 
 
     }
+    public function searchSong(){
+        $this->load->model('SongModel');
+        $search=$this->input->post('search');
+        $this->data['song']=$this->SongModel->searchSong($search);
+        echo json_encode($this->data);
 
+    }
+
+    public function getUploades(){
+    	$this->load->model('SongModel');
+    	$data['uploadcount'] = $this->SongModel->getUploads();
+    	$this->load->view('pages/reports');
+    }
+
+
+    public function searchSongByid(){
+        $this->load->model('SongModel');
+        $search=$this->input->post('id');
+        $this->data['song']=$this->SongModel->searchSongByid($search);
+        echo json_encode($this->data);
+    }
 }

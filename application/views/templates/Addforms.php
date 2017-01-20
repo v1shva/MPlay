@@ -41,7 +41,11 @@
   <!-- AdminLTE for demo purposes -->
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
   <script src="<?php echo base_url("assets/js/demo.js")?>"></script>
-
+  <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-ui.js"); ?>"></script>
+  <script src="<?php echo base_url("assets/fileinput/js/fileinput.js"); ?>" type="text/javascript"></script>  
+  <link rel="stylesheet" href="<?php echo base_url("assets/css/animatedLoader.css"); ?>" />
 
 
 
@@ -267,18 +271,22 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
-              <span class="hidden-xs">Alexander Pierce</span>
+              <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="user-image" alt="User Image">
+              <?php foreach($profiledata as $profile){?>
+              <span class="hidden-xs"><?php echo $profile->name;?></span>
+
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
 
                 <p>
-                  Alexander Pierce - Web Developer
-                  <small>Member since Nov. 2012</small>
+                  Admin -<?php echo $profile->name;?>
+                  <small><?php echo $profile->email;?></small>
+                  <?php }?>
                 </p>
+                
               </li>
               <!-- Menu Body -->
               <li class="user-body">
@@ -297,9 +305,9 @@
               </li>
               <!-- Menu Footer-->
               <li class="user-footer">
-                <div class="pull-left">
-                  <a href="<?php echo base_url('index.php/AdminCtrl/profile'); ?>" class="btn btn-default btn-flat">Profile</a>
-                </div>
+               <!--  <div class="pull-left">
+                  <a href="" class="btn btn-default btn-flat">Profile</a>
+                </div> -->
                 <div class="pull-right">
                   <a href="<?php echo base_url('index.php/AdminCtrl/logout'); ?>" class="btn btn-default btn-flat">Sign out</a>
                 </div>
@@ -322,10 +330,12 @@
       <!-- Sidebar user panel -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="<?php echo base_url("media/admin/profile/adminprofile.jpg");?>" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
-          <p>Alexander Pierce</p>
+        <?php foreach($profiledata as $profile){?>
+          <p><?php echo $profile->name;?></p>
+          <?php }?>
           <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
       </div>
@@ -344,7 +354,7 @@
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
         <li class="active treeview">
-          <a href="login">
+          <a href="home">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
@@ -409,16 +419,16 @@
             <!-- form start -->
             <form role="form">
               <div class="box-body">
-                <div class="form-group">
+                <div class="form-group ui-widget">
                   <label for="exampleInputEmail1">Song Name</label>
-            <input class="form-control" type="text" placeholder="Default input" id="title">
+            <input onfocus="validateTitle(this)" class="form-control" type="text" placeholder="Default input" id="title">
                 </div>
-                <div class="form-group">
+                <div class="form-group ui-widget">
                   <label for="Artist">Artist</label>
                   <input type="text" class="form-control" id="artist" placeholder="Artist">
                 </div>
 
-              <div class="form-group">
+              <div class="form-group ui-widget">
                   <label>Select</label>
                   <select id="selectemotion" class="form-control">
                     <option name="confused">confused</option>
@@ -436,7 +446,7 @@
                   </select>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group ui-widget">
                   <label>Tags</label>
                   <textarea class="form-control" rows="3" placeholder="Tags"></textarea>
                 </div>
@@ -711,7 +721,31 @@
 
 
 
-
+    var titles = [];
+    var artists = [];
+    function retrieveSongTitles(title){
+        titles = [];
+        $('#titleLoader').css("display","block");
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url(); ?>" + "index.php/Song/getAllSongs",
+            dataType: 'json',
+            data: {},
+            complete: function(r){
+                var data = JSON.parse(r.responseText);
+                var songs = data.Allsongs;
+                $('#titleLoader').css("display","none");
+                var i;
+                for(i=0;i<songs.length;i++){
+                    titles.push(songs[i].Title);
+                    artists.push(songs[i].Artist);
+                }
+                $(title).autocomplete({
+                    source: titles
+                });
+            }
+        });
+    }
 
     function  validateTitle(title) {
         if(!isText(title.value)){
@@ -726,11 +760,6 @@
         }
     }
 
-    function verifyTitle(title){
-        $(title).autocomplete({
-
-        });
-    }
     //song upload process
     var selectedTab = "file";
     function selectOption(value) {

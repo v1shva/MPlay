@@ -11,12 +11,7 @@
 
 
 
-<script>
-    $("#fileup").fileinput({'showUpload':true,
-        allowedFileExtensions: ["mp3", "wma"]
-    });
 
-</script>
 
 
 
