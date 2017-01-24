@@ -77,12 +77,7 @@ if($this->session->userdata('logged_in')) {
 
                         <div class="navbar-right navbar-form">
                             <button class="btn btn-default" data-backdrop="static" data-keyboard="false" data-toggle="modal" data-target="#addsong"><span class="glyphicon glyphicon-user"></span> Add Song</button>
-                        <div class="navbar-left navbar-form">
-                            <button class="btn btn-default" data-toggle="modal" data-target="#addsong"><span class="glyphicon glyphicon-user"></span> Add Song</button>
-
-
-                        </div>
-
+                            </div>
 
 
 

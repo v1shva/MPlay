@@ -10,37 +10,21 @@
         <head>
             <meta charset="utf-8" />
             <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-                <title>mPlay</title>
-                <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
-                <link rel="stylesheet" href="<?php echo base_url("assets/css/backgroundAnim.css"); ?>" />
-                <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
-            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
-            <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+            <title>mPlay</title>
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/bootstrap.css"); ?>" />
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/backgroundAnim.css"); ?>" />
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/moodscss.css"); ?>" />
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/jquery.qtip.min.css"); ?>" />
+            <link href="<?php echo base_url("assets/css/jquery-ui.css"); ?>" rel="stylesheet" type="text/css" />
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/ratings/star-rating.css");?>" media="all" type="text/css">
             <link rel="stylesheet" href="<?php echo base_url("assets/css/style.css"); ?>"/>
             <link rel="stylesheet" href="<?php echo base_url("assets/player/dist/skin/whiteskin/css/jplayer.flat.white.css"); ?>" />
-            <link rel="stylesheet" href="<?php echo base_url("assets/css/ratings/star-rating.css");?>" media="all" type="text/css">
-            <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
+            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-3.1.1.min.js"); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url("assets/js/bootstrap.js"); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery-ui.js"); ?>"></script>
+            <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.qtip.min.js"); ?>"></script>
             <script src="<?php echo base_url("assets/js/ratings/star-rating.js");?>" type="text/javascript"></script>
-
-
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
-
-            <!--other bootstrap  links-->
-            <link href=<?php echo base_url("assets/css/bootstrap.css");?> rel="stylesheet">
-
-            <!-- Custom CSS -->
-            <link href=<?php echo base_url("assets/css/simple-sidebar.css");?> rel="stylesheet">
-
-            <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-            <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-            <!--[if lt IE 9]>
-            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-            <![endif]-->
-
-
-
-
 
         </head>
         <body>
