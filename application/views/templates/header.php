@@ -25,6 +25,7 @@
             <script type="text/javascript" src="<?php echo base_url("assets/js/jquery.qtip.min.js"); ?>"></script>
             <script src="<?php echo base_url("assets/js/ratings/star-rating.js");?>" type="text/javascript"></script>
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+            <link rel="stylesheet" href="<?php echo base_url("assets/css/animatedLoader.css"); ?>" />
 
         </head>
         <body>

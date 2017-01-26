@@ -7,31 +7,9 @@
  */?>
 
 <style>
-    .ui-tooltip {
-        background: #666;
-        color: white;
-        border: none;
-        padding: 0;
-        opacity: 1;
-        width: auto;
-    }
-    .ui-tooltip-content {
-        position: relative;
-        padding: 1em;
-    }
-    .ui-tooltip-content::after {
-        content: '';
-        position: absolute;
-        border-style: solid;
-        display: block;
-        width: 0;
-    }
-    .emoicon .ui-tooltip-content::after {
-        top: -10px;
-        left: 42%;
-        border-color: #666 transparent;
-        border-width: 0 10px 10px;
-    }
+   .tooltip_font{
+       font-size: 12px;
+   }
 </style>
 
 <div class="jumbotron emobar">
@@ -86,11 +64,16 @@
                 console.log(playlist);
                 songs.setPlaylist(playlist);
             }
+
         });
     });
     
     $(document).ready(function(){
-        var position = { my: 'center top', at: 'center bottom+10' };
+        //Capitalize function added to the string
+        String.prototype.capitalizeFirstLetter = function() {
+            return this.charAt(0).toUpperCase() + this.slice(1);
+        }
+
         $('.img-circle.emoicon.songSelect').each(function(i, obj) {
             /*
             $(obj).qtip({
@@ -123,17 +106,54 @@
                     }
                 }
             });*/
+            var emotion = obj.getAttribute('name').capitalizeFirstLetter();
            $(obj).qtip({
                content: {
-                   text: 'Clicking this link will only work on mobile devices'
+                   title: emotion +" - Top Songs",
+                   text: function(event, api) {
+                       $.ajax({
+                           type: "POST",
+                           url: "index.php/Player/load_playlist",
+                           dataType: 'json',
+                           data: {emotion:obj.getAttribute('name')},
+                       })
+                           .then(function(data) {
+                               /* Process the retrieved JSON object
+                                *    Retrieve a specific attribute from our parsed
+                                *    JSON string and set the tooltip content.
+                                */
+                               var content  = '<ul>';
+                               for (var i in data.songs) {
+                                   var item = data.songs[i];
+                                   content += '<li style="padding: 5px">' +item.Title +' - '+item.Artist+ '</li>';
+                               }
+                               content += '<ul>';
+                               // Now we set the content manually (required!)
+                               api.set('content.text', content);
+                           }, function(xhr, status, error) {
+                               // Upon failure... set the tooltip content to the status and error value
+                               api.set('content.text', status + ': ' + error);
+                           });
+
+                       return '<div style="margin: auto;margin-top:5px;margin-bottom: 5px;" class="cssload-thecube">\
+                           <div class="cssload-cube cssload-c1"></div>\
+                           <div class="cssload-cube cssload-c2"></div>\
+                           <div class="cssload-cube cssload-c4"></div>\
+                           <div class="cssload-cube cssload-c3"></div>\
+                           </div>'; // Set some initial loading text
+                   }
+
                },
                style: {
-                   classes: 'qtip-dark'
+                   classes: 'qtip-light qtip-rounded qtip-shadow tooltip_font',
                },
                position: {
                    my: 'top center',  // Position my top left...
                    at: 'bottom center', // at the bottom right of...
                    viewport: $('body'),
+                   adjust: {
+                       method: 'shift none'
+                   }
                }
            });
         });
