@@ -89,6 +89,7 @@ $(document).ready(function(){
 				var item = data.songs[i];
 				playlist.push({
 					title : item.Title,
+                    artist : item.Artist,
 					mp3 : "<?php echo base_url();?>" + item.path,
 				});
 			}

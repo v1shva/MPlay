@@ -11,7 +11,30 @@
        font-size: 12px;
    }
 </style>
+<div class="modal fade" id="selectMood" role="dialog" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
 
+        <!-- Modal content-->
+        <div class="modal-content" >
+            <div class="modal-header">
+                <button id="closeFromTop" type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Loading the playlist...</h4>
+            </div>
+            <div class="modal-body">
+                <div style="margin: auto;margin-top:5px;margin-bottom: 5px;" class="cssload-thecube">
+                    <div class="cssload-cube cssload-c1"></div>
+                    <div class="cssload-cube cssload-c2"></div>
+                    <div class="cssload-cube cssload-c4"></div>
+                    <div class="cssload-cube cssload-c3"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="closeFromBottom" type="button" class="btn btn-default" data-dismiss="modal" disabled="">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="jumbotron emobar">
     <div class="container" style="text-align: center">
         <h1>Let us find your Music.</h1>
@@ -45,7 +68,7 @@
             $(obj).removeClass('selected');
         });
         $(this).addClass('selected');
-
+        $('#selectMood').modal('show');
         jQuery.ajax({
             type: "POST",
             url: "index.php/Player/load_playlist",
@@ -58,11 +81,13 @@
                     var item = data.songs[i];
                     playlist.push({
                         title : item.Title,
+                        artist : item.Artist,
                         mp3 : "<?php echo base_url();?>" + item.path,
                     });
                 }
                 console.log(playlist);
                 songs.setPlaylist(playlist);
+                $('#selectMood').modal('hide');
             }
 
         });
