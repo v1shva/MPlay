@@ -1,16 +1,12 @@
-application: MPlay
-version: 2
-runtime: php
+application: mplay-151612
+runtime: php55
 api_version: 1
-threadsafe: false
+version: 1
 
 handlers:
-- url: /static/(.*)
-  static_files: static/\1
-  upload: static/(.*)
 
-- url: /
-  script: index.php
+- url: /user_guide
+static_dir: user_guide
 
-- url: /(.+)
-  script: index.php
+- url: /.*
+script: index.php
