@@ -1,12 +1,9 @@
 application: mplay-151612
+version: 1
 runtime: php55
 api_version: 1
-version: 1
+threadsafe: true
 
 handlers:
-
-- url: /user_guide
-static_dir: user_guide
-
-- url: /.*
-script: index.php
+- url: .*
+  script: main.php
